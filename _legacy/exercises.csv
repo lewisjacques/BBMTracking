@@ -1,0 +1,173 @@
+exercise,exercise_type,MuscleGroup
+Deadlift - Stiff Leg,Barbell,Back
+Deadlift - Standard,Barbell,Back
+Lateral Pull Down,Cable,Back
+Lateral Pull Down,Machine,Back
+Lateral Pull Down - Close Grip-Palms Up,Cable,Back
+Lateral Pull Down - One Arm,Cable,Back
+Low Pulley Row - Underhand,Cable,Back
+Low Pulley Row - Overhand,Cable,Back
+Seated Pulley Row - V-Grip,Cable,Back
+Face Pull,Cable,Back
+Face Pull - Double Rope,Cable,Back
+Chin Ups,Body,Back
+Straight Arm Pushdown - Bar,Cable,Back
+Straight Arm Pushdown - Rope,Cable,Back
+Human Pullover,Body,Back
+1-Arm High Cable Row,Cable,Back
+Abduction Row,Dumbell,Back
+Dead Row,Barbell,Back
+ISO Lateral Row - Neutral,Machine,Back
+ISO Lateral Row - Wide,Machine,Back
+Chest Supported Dumbell Row,Dumbell,Back
+Bent-Over Rows,T-Bar,Back
+Bent-Over Rows - Overhand,Smith,Back
+Bent-Over Rows - 45 Degree,Barbell,Back
+Bent-Over Rows,Barbell,Back
+Chin Ups - Negatives,Body,Back
+Upper Chest Pullover,Dumbell,Chest
+Pectoral Flys,Dumbell,Chest
+Pectoral Flys,Cable,Chest
+Pectoral Flys - Mid-Chest-Standing,Cable,Chest
+Bench Press - Incline,Dumbell,Chest
+Bench Press - Flat,Dumbell,Chest
+Bench Press - Decline,Dumbell,Chest
+Bench Press - Incline,Barbell,Chest
+Bench Press - Incline,Smith,Chest
+Bench Press - Flat,Barbell,Chest
+Bench Press - Decline,Barbell,Chest
+Bench Press - Lateral,Machine,Chest
+Curls - Incline,Dumbell,Biceps
+Curls - Narrow Grip,Barbell,Biceps
+Curls - Wide Grip,Barbell,Biceps
+Curls - Concentration,Dumbell,Biceps
+Curls - Standard,Dumbell,Biceps
+Curls - Hammer,Dumbell,Biceps
+Curls - Hammer - Cross Body,Dumbell,Biceps
+Curls - Crush,Dumbell,Biceps
+Curls,Cable,Biceps
+Hammer Hold,Dumbell,Biceps
+Overhead Tricep Extension - One Arm,Dumbell,Triceps
+Overhead Tricep Extension - One Arm,Cable,Triceps
+Overhead Tricep Extension - Both Arms,Dumbell,Triceps
+Overhead Tricep Extension,Cable,Triceps
+Dips,Body,Triceps
+Bench Press - Narrow Grip,Barbell,Triceps
+Bench Press - Narrow Grip,Dumbell,Triceps
+Tricep Kick-Backs,Dumbell,Triceps
+Tricep Kick-Backs,Cable,Triceps
+Cross Body Tricep Extension,Cable,Triceps
+Incline DB Power Bomb,Dumbell,Triceps
+Lying Overhead Tricep Extension - One DB - Dumbell,Dumbell,Triceps
+Lying Overhead Tricep Extension - Two DBs - Dumbell,Dumbell,Triceps
+Lying Overhead Tricep Extension,Barbell,Triceps
+Rear Extension - V-Bar,Cable,Triceps
+Rear Extension - Rope,Cable,Triceps
+Tricep Extension Pulldown - Rope,Cable,Triceps
+Tricep Extension Pulldown - Bar,Cable,Triceps
+Tricep Extension Pulldown - 1-Arm - Underhand,Cable,Triceps
+Tricep Extension Pulldown - 1-Arm - Overhand,Cable,Triceps
+Dips - Bench,Body,Triceps
+Shoulder Press,Barbell,Shoulders
+Shoulder Press,Dumbell,Shoulders
+Shoulder Press,Smith,Shoulders
+Military Press,Barbell,Shoulders
+Lateral Shoulder Press,Machine,Shoulders
+Lateral Raise - Bent Over,Dumbell,Shoulders
+Lateral Raise - Bent Over Bench,Dumbell,Shoulders
+Lateral Raise - Standing,Dumbell,Shoulders
+Upright Row,Barbell,Shoulders
+Upright Row,Cable,Shoulders
+Lateral Raise,Cable,Shoulders
+Reverse Flys,Cable,Shoulders
+Shrugs,Dumbell,Shoulders
+Shrugs,Barbell,Shoulders
+Scoop Press,Dumbell,Shoulders
+Front Raises,Dumbell,Shoulders
+Hip Huggers,Dumbell,Shoulders
+Arnold Press,Dumbell,Shoulders
+Sit Ups - Normal,Body,Core
+Sit Ups - Roman Chair,Body,Core
+Crunches,Body,Core
+Crunches - Weighted,Cable,Core
+Crunches - Weighted,Dumbell,Core
+Corkscrew - Hanging,Body,Core
+Plank,Body,Core
+Corkscrew - Resting,Body,Core
+Kneeling Rope Crunch,Cable,Core
+KB Walk,Kettlebell,Core
+KB Side Bend,Kettlebell,Core
+Leg Raises - Bent Leg Hanging,Body,Core
+Leg Raises - Bent Leg Resting,Body,Core
+Leg Raises - Straight Leg Hanging,Body,Core
+Leg Raises - Straight Leg Resting,Body,Core
+Good Mornings,Barbell,Legs
+Hamstring Curls,Cable,Legs
+Squat - Front,Barbell,Legs
+Squat - Back,Barbell,Legs
+Leg Press,Machine,Legs
+Hack Squat,Machine,Legs
+Bulgarian Split Squat,Dumbell,Legs
+Bulgarian Split Squat,Barbell,Legs
+Romanian Deadlifts,Barbell,Legs
+Romanian Deadlifts,Dumbell,Legs
+ISO Lateral Leg Extensions,Machine,Legs
+Sumo Squats,Dumbell,Legs
+Assisted Reverse Lunges,Smith,Legs
+Hip Thrusts - B-Stance,Dumbell,Legs
+Hip Thrusts,Barbell,Legs
+Hip Thrusts,Body,Legs
+Leg Extensions,Machine,Legs
+Oblique Lunges,Plate,Legs
+Deadlift,Barbell,Legs
+Calf Raises,Barbell,Legs
+Calf Raises - Bent Leg,Machine,Legs
+Calf Raises - Straight Leg,Machine,Legs
+Wrist Curls,Barbell,Forearms
+Wrist Curls,Dumbell,Forearms
+Curls - Overhand,Barbell,Forearms
+Curls - Overhand,Dumbell,Forearms
+Wrist Flexion,Cable,Forearms
+Wrist Extension,Cable,Forearms
+250m Sprints,Erg,Core
+500m Sprints,Erg,Core
+750m Sprints,Erg,Core
+1k Intervals,Erg,Core
+2k Intervals,Erg,Core
+5k Intervals,Erg,Core
+1min Sprint,Erg,Core
+2min Sprint,Erg,Core
+3min Sprint,Erg,Core
+5min Sprint,Erg,Core
+10min Intervals,Erg,Core
+15min Intervals,Erg,Core
+20min Intervals,Erg,Core
+2k,Erg,Core
+5k,Erg,Core
+10k,Erg,Core
+12k,Erg,Core
+15k,Erg,Core
+5k,Run,Core
+10k,Run,Core
+12k,Run,Core
+UT2 Fat-Burn - r18,Erg,Core
+10k,Bike,Core
+30min,Bike,Core
+UT2,Run,Core
+35km Loop,Bike,Core
+UT2,Bike,Core
+Tennis,Body,Core
+30km Loop,Bike,Core
+42km Loop,Bike,Core
+Bent Over Lateral Raise,Dumbell,Shoulder
+Tricep Extension Pulldown,Cable,Triceps
+Leg Press - Standing,Machine,Legs
+Straight Arm Pushdown,Cable,Back
+Curls - Simple,Barbell,Biceps
+Leg Raises - Bent Leg,Body,Core
+ISO Lateral Row,Machine,Back
+Plank - Body,Core
+Curls - Simple,Dumbell,Biceps
+DB Walk,Kettlebell,Core
+"Lateral Pull Down - Close Grip, Palms Up",Cable,Back
+Pectoral Flys - Mid-Chest - Standing,Cable,Chest
