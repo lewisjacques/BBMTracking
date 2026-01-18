@@ -1,105 +1,143 @@
-# Respnse will take python data or serialised data and render it into JSON 
+from rest_framework import viewsets, status
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter
+
 from base.models import Session, Exercise, SessionEntry, MuscleGroup
-from .serialisers import SessionSerializer, ExerciseSerializer, SessionEntrySerializer, MuscleGroupSerializer, MuscleGroupWithExercisesSerializer
+from .serialisers import (
+    SessionDetailSerializer, SessionCreateSerializer,
+    ExerciseDetailSerializer, ExerciseCreateSerializer,
+    SessionEntryDetailSerializer, SessionEntryCreateSerializer,
+    MuscleGroupSerializer
+)
 
-### --- Total Views --- ###
-
-@api_view(['GET'])
-def getSessions(request, filters:None|dict=None):
+class ExerciseViewSet(viewsets.ModelViewSet):
     """
-    Get all sessions for the user.
-    Example usage - "GET /sessions/?date_from=2025-01-01&completed=true"
-
-    Filtering functionality for:
-        - Time period
-        - Completion status
-        - Exercise
-        - Muscle Group
+    ViewSet for Exercise CRUD operations
+    GET    /api/exercises/          - List all exercises
+    POST   /api/exercises/          - Create new exercise
+    GET    /api/exercises/{id}/     - Retrieve specific exercise
+    PUT    /api/exercises/{id}/     - Update exercise
+    DELETE /api/exercises/{id}/     - Delete exercise
     """
-    filters = {}
+    queryset = Exercise.objects.all()
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    filterset_fields = ['muscle_group', 'exercise_type']
+    search_fields = ['exercise_name']
     
-    # Extract query parameters from request
-    if request.query_params.get('date_from'):
-        filters['date__gte'] = request.query_params.get('date_from')
-    if request.query_params.get('date_to'):
-        filters['date__lte'] = request.query_params.get('date_to')
-    if request.query_params.get('completed'):
-        filters['completed'] = request.query_params.get('completed') == 'true'
-    # For filtering by exercise (via SessionEntry)
-    if request.query_params.get('exercise_id'):
-        filters['sessionentry__exercise_id'] = request.query_params.get('exercise_id')
-    # For filtering by muscle group (via SessionEntry -> Exercise -> MuscleGroup)
-    if request.query_params.get('muscle_group_id'):
-        filters['sessionentry__exercise__muscle_group_id'] = request.query_params.get('muscle_group_id')
+    def get_serializer_class(self):
+        """Use different serializers for different actions"""
+        if self.action in ['create', 'update', 'partial_update']:
+            return ExerciseCreateSerializer
+        return ExerciseDetailSerializer
     
-    sessions = Session.objects.filter(**filters).distinct() if filters else Session.objects.all()
-    serializer = SessionSerializer(sessions, many=True)
-    return Response(serializer.data)
+    def create(self, request, *args, **kwargs):
+        """Create and return full exercise details"""
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return Response(
+            ExerciseDetailSerializer(serializer.instance).data,
+            status=status.HTTP_201_CREATED
+        )
 
-@api_view(['GET'])
-def getExercises(request):
-    filters = {}
-    if request.query_params.get('muscle_group_id'):
-        filters['muscle_group_id'] = request.query_params.get('muscle_group_id')
+class SessionViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet for Session CRUD operations with advanced filtering
+    GET    /api/sessions/          - List with filters (date_from, date_to, completed, etc.)
+    POST   /api/sessions/          - Create new session
+    GET    /api/sessions/{id}/     - Retrieve specific session with entries
+    PUT    /api/sessions/{id}/     - Update session
+    DELETE /api/sessions/{id}/     - Delete session
+    """
+    # Prefetch related saves queries when accessing SessionEntry within Session
+    queryset = Session.objects.all().prefetch_related('sessionentry_set')
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['completed']
+    
+    def get_serializer_class(self):
+        """Use different serializers for different actions"""
+        if self.action in ['create', 'update', 'partial_update']:
+            return SessionCreateSerializer
+        return SessionDetailSerializer
+    
+    def get_queryset(self):
+        """Apply custom filtering from query parameters"""
+        # Using super() allows us to get a fresh queryset each time
+        queryset = super().get_queryset()
+        
+        # Filter by date
+        if date_from := self.request.query_params.get('date_from'):
+            queryset = queryset.filter(date__gte=date_from)
+        if date_to := self.request.query_params.get('date_to'):
+            queryset = queryset.filter(date__lte=date_to)
+        # Filter by exercise
+        if exercise_id := self.request.query_params.get('exercise_id'):
+            queryset = queryset.filter(sessionentry__exercise_id=exercise_id).distinct()
+        # Filter by muscle group
+        if muscle_group_id := self.request.query_params.get('muscle_group_id'):
+            queryset = queryset.filter(
+                sessionentry__exercise__muscle_group_id=muscle_group_id
+            ).distinct()
+        
+        return queryset
+    
+    def create(self, request, *args, **kwargs):
+        """Create and return full session details"""
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return Response(
+            SessionDetailSerializer(serializer.instance).data,
+            status=status.HTTP_201_CREATED
+        )
 
-    exercises = Exercise.objects.filter(**filters) if filters else Exercise.objects.all()
-    serializer = ExerciseSerializer(exercises, many=True)
-    return Response(serializer.data)
+class SessionEntryViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet for SessionEntry CRUD operations
+    GET    /api/session-entries/          - List all entries
+    POST   /api/session-entries/          - Create new entry
+    GET    /api/session-entries/{id}/     - Retrieve specific entry
+    PUT    /api/session-entries/{id}/     - Update entry
+    DELETE /api/session-entries/{id}/     - Delete entry
+    """
+    queryset = SessionEntry.objects.all().select_related('session', 'exercise')
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['session', 'exercise']
+    
+    def get_serializer_class(self):
+        """Use different serializers for different actions"""
+        if self.action in ['create', 'update', 'partial_update']:
+            return SessionEntryCreateSerializer
+        return SessionEntryDetailSerializer
+    
+    def create(self, request, *args, **kwargs):
+        """Check for duplicate exercises in session before creating"""
+        session_id = request.data.get('session')
+        exercise_id = request.data.get('exercise')
+        
+        if SessionEntry.objects.filter(
+            session_id=session_id,
+            exercise_id=exercise_id
+        ).exists():
+            return Response(
+                {'error': 'This exercise is already added to the session'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return Response(
+            SessionEntryDetailSerializer(serializer.instance).data,
+            status=status.HTTP_201_CREATED
+        )
 
-# Get Muscle Groups with all relevant exercises nested within
-@api_view(['GET'])
-def getMuscleGroups(request):
-    muscle_groups = MuscleGroup.objects.all()
-    serializer = MuscleGroupWithExercisesSerializer(muscle_groups, many=True)
-    return Response(serializer.data)
-
-### --- Individual Views --- ###
-
-@api_view(['GET'])
-# Return the session information with all session entries nested within it
-def getSession(request, pk):
-    try:
-        session = Session.objects.get(id=pk)
-        # SessionSerializer now automatically includes nested session_entries with exercise details
-        serializer = SessionSerializer(session)
-        return Response(serializer.data)
-    except Session.DoesNotExist:
-        return Response({'error': f'Session {pk} not found'}, status=404)
-
-### --- Post Requests --- ###
-
-@api_view(['POST'])
-def addExercise(request):
-    # Let the serializer do the heavy lifting by passing the whole request through
-    serializer = ExerciseSerializer(data=request.data)
-    if serializer.is_valid():
-        # Create a new item in the database
-        serializer.save()
-        # Return the newly created exercise in the response
-        return Response(serializer.data)
-    return Response(serializer.errors, status=400)
-
-@api_view(['POST'])
-def addSession(request):
-    serializer = SessionSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data)
-    return Response(serializer.errors, status=400)
-
-@api_view(['POST'])
-def addSessionEntry(request):
-    # Don't allow the same exercise twice in one session
-    session_id = request.data.get('session')
-    exercise_id = request.data.get('exercise')
-
-    if SessionEntry.objects.filter(session_id=session_id, exercise_id=exercise_id).exists():
-        return Response({'error': 'This exercise is already added to the session'}, status=400)
-
-    serializer = SessionEntrySerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data)
-    return Response(serializer.errors, status=400)
+class MuscleGroupViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    ViewSet for MuscleGroup read operations
+    GET    /api/muscle-groups/          - List all muscle groups with exercises
+    GET    /api/muscle-groups/{id}/     - Retrieve specific muscle group with exercises
+    """
+    queryset = MuscleGroup.objects.all().prefetch_related('exercise_set')
+    serializer_class = MuscleGroupSerializer

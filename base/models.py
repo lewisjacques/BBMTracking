@@ -20,7 +20,7 @@ class Exercise(models.Model):
 
 class Session(models.Model):
     date = models.DateField()
-    notes = models.TextField()
+    notes = models.TextField(blank=True, default='')
     completed = models.BooleanField(default=True)
 
 # Each SessionEntry belongs to one Session

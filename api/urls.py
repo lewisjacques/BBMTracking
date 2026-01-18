@@ -1,11 +1,14 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from . import views
 
+# Create a router and register ViewSets
+router = DefaultRouter()
+router.register(r'exercises', views.ExerciseViewSet, basename='exercise')
+router.register(r'sessions', views.SessionViewSet, basename='session')
+router.register(r'session-entries', views.SessionEntryViewSet, basename='session-entry')
+router.register(r'muscle-groups', views.MuscleGroupViewSet, basename='muscle-group')
+
 urlpatterns = [
-    path('', views.getExercises, name='get_exercises'),
-    path('getMuscleGroups', views.getMuscleGroups, name='get_muscle_groups'),
-    path('getSessions', views.getSessions, name='get_sessions'),
-    path('getSession/<int:pk>/', views.getSession, name='get_session'),
-    path('addExercise/', views.addExercise, name='add_exercise'),
-    path('addSession/', views.addSession, name='add_session'),
+    path('', include(router.urls)),
 ]
