@@ -184,10 +184,10 @@ Date,Exercise,Result,Weight,Status
 2023-08-18,ISO Lateral Row - Machine,7.5 x2,7.50,Static
 2023-08-18,Shoulder Press - Dumbell,10 (v hard),10.00,Static
 2023-08-18,Hip Huggers - Dumbell,10,10.00,Static
-2023-08-18,Kettlebell side bend,16,16.00,Static
+2023-08-18,KB Side Bend - Kettlebell,16,16.00,Static
 2023-08-18,Bench Press - Decline - Barbell,30,30.00,Static
 2023-08-23,Shoulder Press - Barbell,6 C 8 H,8.00,Static
-2023-08-23,Kettlebell side bend,16 (C) 20 (h),20.00,Static
+2023-08-23,KB Side Bend - Kettlebell,16 (C) 20 (h),20.00,Static
 2023-08-23,Bench Press - Flat - Barbell,30, 22.5 30.00,Static
 2023-08-23,Shoulder Press - Barbell,Pw: 15 (can) 17.5 hope,17.50,Peak
 2023-09-11,Shoulder Press - Dumbell,10,10.00,Static
@@ -230,9 +230,9 @@ Date,Exercise,Result,Weight,Status
 2024-01-22,Assisted Reverse Lunges - Smith Machine,30,30.00,Static
 2024-01-22,Hip Thrusts - Barbell,60,60.00,Static
 2024-01-29,Shoulder Press - Dumbell,Pw 6,6.00,Peak
-2024-01-29,Reverse flys ,5,5.00,Static
+2024-01-29,Reverse flys,5,5.00,Static
 2024-01-29,Bench Press - Flat - Barbell,Pw 20,20.00,Peak
-2024-01-29,Rear extension ,10,10.00,Static
+2024-01-29,Rear extension,10,10.00,Static
 2024-01-29,Tricep Extension Pulldown - Cable,10,10.00,Static
 2024-02-13,Leg Press - Machine,70,70.00,Static
 2024-02-13,Romanian Deadlifts - Barbell,40,40.00,Static
@@ -301,7 +301,7 @@ Date,Exercise,Result,Weight,Status
 2024-10-24,Lateral Pull Down - Cable,Ww 8,8.00,Working
 2024-10-24,Tricep Extension Pulldown - Rope - Cable,Ww 11.25,11.25,Working
 2024-10-24,Dead Hang - Body,4 sets of as long as you can,4.00,Static
-2024-10-28,RDLs b stance ,20,20.00,Static
+2024-10-28,RDLs b stance,20,20.00,Static
 2024-10-29,Leg Press - Machine,Pw 100,100.00,Peak
 2024-10-29,Good Mornings - Barbell,Ww 10,10.00,Working
 2024-10-29,Bulgarian Split Squat - Dumbell,Ww 10,10.00,Working
@@ -398,8 +398,8 @@ Date,Exercise,Result,Weight,Status
 2025-03-24,Romanian Deadlifts - Barbell,18,18.00,Static
 2025-03-25,Curls - Simple - Dumbell,Bar,0.00,Static
 2025-03-25,Tricep Extension Pulldown - Rope - Cable,7.5,7.50,Static
-2025-03-25,Skull crushers ,7.5,7.50,Static
-2025-03-25,Incline chest press ,10,10.00,Static
+2025-03-25,Skull crushers,7.5,7.50,Static
+2025-03-25,Incline chest press,10,10.00,Static
 2025-03-25,Bench Press - Flat - Barbell,30,30.00,Static
 2025-03-25,Pectoral Flys - Cable,28.5,28.50,Static
 2025-03-25,Tricep Kick-Backs - Dumbell,5,5.00,Static
@@ -447,7 +447,7 @@ Date,Exercise,Result,Weight,Status
 2025-05-08,Lateral Pull Down - Cable,9,9.00,Static
 2025-05-08,Crunches - Weighted - Cable,9,9.00,Static
 2025-05-12,1k Intervals - Run,25min,25.00,Static
-2025-05-12,Skull crushers ,10,10.00,Static
+2025-05-12,Skull crushers,10,10.00,Static
 2025-05-12,Curls - Simple - Dumbell,8,8.00,Static
 2025-05-12,Pectoral Flys - Cable,26,26.00,Static
 2025-05-12,Tricep Kick-Backs - Dumbell,2.7,2.70,Static
@@ -465,9 +465,9 @@ Date,Exercise,Result,Weight,Status
 2025-05-23,Crunches - Weighted - Cable,10,10.00,Static
 2025-05-23,Curls - Simple - Dumbell,10,10.00,Static
 2025-05-23,Tricep Extension Pulldown - Rope - Cable,10,10.00,Static
-2025-05-23,Skull crushers ,10,10.00,Static
+2025-05-23,Skull crushers,10,10.00,Static
 2025-05-23,Erg,15 mins,15.00,Static
-2025-05-28,Skull crushers ,10,10.00,Static
+2025-05-28,Skull crushers,10,10.00,Static
 2025-05-28,Curls - Simple - Dumbell,8,8.00,Static
 2025-05-28,Tricep Extension Pulldown - Rope - Cable,7.5,7.50,Static
 2025-05-28,Bench Press - Flat - Barbell,30,30.00,Static

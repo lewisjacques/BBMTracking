@@ -129,36 +129,36 @@ Curls - Overhand,Barbell,Forearms
 Curls - Overhand,Dumbell,Forearms
 Wrist Flexion,Cable,Forearms
 Wrist Extension,Cable,Forearms
-250m Sprints,Erg,Core
-500m Sprints,Erg,Core
-750m Sprints,Erg,Core
-1k Intervals,Erg,Core
-2k Intervals,Erg,Core
-5k Intervals,Erg,Core
-1min Sprint,Erg,Core
-2min Sprint,Erg,Core
-3min Sprint,Erg,Core
-5min Sprint,Erg,Core
-10min Intervals,Erg,Core
-15min Intervals,Erg,Core
-20min Intervals,Erg,Core
-2k,Erg,Core
-5k,Erg,Core
-10k,Erg,Core
-12k,Erg,Core
-15k,Erg,Core
-5k,Run,Core
-10k,Run,Core
-12k,Run,Core
-UT2 Fat-Burn - r18,Erg,Core
-10k,Bike,Core
-30min,Bike,Core
-UT2,Run,Core
-35km Loop,Bike,Core
-UT2,Bike,Core
-Tennis,Body,Core
-30km Loop,Bike,Core
-42km Loop,Bike,Core
+250m Sprints,Erg,Cardio
+500m Sprints,Erg,Cardio
+750m Sprints,Erg,Cardio
+1k Intervals,Erg,Cardio
+2k Intervals,Erg,Cardio
+5k Intervals,Erg,Cardio
+1min Sprint,Erg,Cardio
+2min Sprint,Erg,Cardio
+3min Sprint,Erg,Cardio
+5min Sprint,Erg,Cardio
+10min Intervals,Erg,Cardio
+15min Intervals,Erg,Cardio
+20min Intervals,Erg,Cardio
+2k,Erg,Cardio
+5k,Erg,Cardio
+10k,Erg,Cardio
+12k,Erg,Cardio
+15k,Erg,Cardio
+5k,Run,Cardio
+10k,Run,Cardio
+12k,Run,Cardio
+UT2 Fat-Burn - r18,Erg,Cardio
+10k,Bike,Cardio
+30min,Bike,Cardio
+UT2,Run,Cardio
+35km Loop,Bike,Cardio
+UT2,Bike,Cardio
+Tennis,Body,Cardio
+30km Loop,Bike,Cardio
+42km Loop,Bike,Cardio
 Bent Over Lateral Raise,Dumbell,Shoulder
 Tricep Extension Pulldown,Cable,Triceps
 Leg Press - Standing,Machine,Legs
@@ -166,8 +166,27 @@ Straight Arm Pushdown,Cable,Back
 Curls - Simple,Barbell,Biceps
 Leg Raises - Bent Leg,Body,Core
 ISO Lateral Row,Machine,Back
-Plank - Body,Core
+Plank - Body,Body,Core
 Curls - Simple,Dumbell,Biceps
 DB Walk,Kettlebell,Core
 "Lateral Pull Down - Close Grip, Palms Up",Cable,Back
 Pectoral Flys - Mid-Chest - Standing,Cable,Chest
+10min Intervals - Erg,Erg,Cardio
+1k Intervals - Erg,Erg,Cardio
+1k Intervals - Run,Run,Cardio
+5k - Run,Run,Cardio
+Dead Hang,Body,Back
+Deadlift - Stiff Leg,Barbell,Legs
+Erg,Erg,Cardio
+Hyperextensions,Body,Back
+ISO-Lateral wide Pull Down,Machine,Back
+Incline chest press,Dumbell,Chest
+Leg Curls,Cable,Legs
+Lunges,Dumbell,Legs
+RDLs b stance,Barbell,Legs
+Rear extension,Cable,Triceps
+Reverse Deficit Lunges,Barbell,Legs
+Reverse flys,Cable,Shoulders
+Skull crushers,Cable,Triceps
+Upright Row,Dumbell,Shoulders
+Yoga,Body,Cardio

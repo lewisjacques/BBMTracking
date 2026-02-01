@@ -23,9 +23,15 @@ class Command(BaseCommand):
             required=True,
             help='Email of user to assign sessions to'
         )
+        parser.add_argument(
+            '--clear-db',
+            action='store_true',
+            help='Clear all sessions and entries before importing'
+        )
 
     def handle(self, *args, **options):
         email = options['email']
+        clear_db = options.get('clear_db', False)
         
         # Find user by email
         try:
@@ -35,6 +41,18 @@ class Command(BaseCommand):
                 self.style.ERROR(f'User with email {email} not found')
             )
             return
+        
+        # Clear database if requested (only for this user)
+        if clear_db:
+            self.stdout.write(
+                self.style.WARNING(f'Clearing all sessions and entries for {user.email}...')
+            )
+            sessions_to_delete = Session.objects.filter(user=user)
+            SessionEntry.objects.filter(session__user=user).delete()
+            sessions_to_delete.delete()
+            self.stdout.write(
+                self.style.SUCCESS(f'Database cleared for {user.email}.')
+            )
         
         self.stdout.write(
             self.style.SUCCESS(f'Importing sessions for user: {user.email}')
@@ -71,7 +89,7 @@ class Command(BaseCommand):
                     )
                 
                 # Get or create exercise
-                exercise_obj, _ = Exercise.objects.get_or_create(
+                exercise_obj, created = Exercise.objects.get_or_create(
                     exercise_name=exercise_name,
                     defaults={
                         'exercise_name_legacy': exercise_name,
@@ -79,6 +97,11 @@ class Command(BaseCommand):
                         'exercise_type': exercise_type_obj
                     }
                 )
+                
+                # If exercise already existed and is missing exercise_type, update it
+                if not created and not exercise_obj.exercise_type and exercise_type_obj:
+                    exercise_obj.exercise_type = exercise_type_obj
+                    exercise_obj.save()
 
                 # Get or create session for this date and user
                 # Multiple entries can belong to the same date/session
@@ -90,14 +113,22 @@ class Command(BaseCommand):
                 if created:
                     sessions_created += 1
                 
-                # Create session entry
-                SessionEntry.objects.create(
+                # Create session entry only if it doesn't already exist
+                entry_exists = SessionEntry.objects.filter(
                     session=session,
                     exercise=exercise_obj,
                     weight=str(row['Weight']),
                     status=row['Status']
-                )
-                entries_created += 1
+                ).exists()
+                
+                if not entry_exists:
+                    SessionEntry.objects.create(
+                        session=session,
+                        exercise=exercise_obj,
+                        weight=str(row['Weight']),
+                        status=row['Status']
+                    )
+                    entries_created += 1
             
             self.stdout.write(
                 self.style.SUCCESS(
