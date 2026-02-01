@@ -112,6 +112,71 @@ export async function fetchMuscleGroups(): Promise<MuscleGroup[]> {
   return response.json()
 }
 
+export async function createExercise(data: {
+  exercise_name: string
+  muscle_group_name: string
+  exercise_type_name?: string
+}): Promise<Exercise> {
+  console.log('API call: createExercise', data)
+  
+  // First ensure muscle group exists
+  let muscleGroupId: number
+  try {
+    const muscleGroupResponse = await fetch(`${API_BASE}/muscle-groups/`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ muscle_group_name: data.muscle_group_name })
+    })
+    const muscleGroupData = await muscleGroupResponse.json()
+    muscleGroupId = muscleGroupData.id
+  } catch (e) {
+    // Group might already exist, try to fetch it
+    const muscleGroupsResponse = await fetch(`${API_BASE}/muscle-groups/`)
+    const muscleGroups = await muscleGroupsResponse.json()
+    const existing = muscleGroups.find((g: MuscleGroup) => g.muscle_group_name === data.muscle_group_name)
+    if (!existing) throw new Error('Could not create or find muscle group')
+    muscleGroupId = existing.id
+  }
+  
+  // Create exercise type if provided
+  let exerciseTypeId: number | undefined
+  if (data.exercise_type_name) {
+    try {
+      const typeResponse = await fetch(`${API_BASE}/exercise-types/`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type_name: data.exercise_type_name })
+      })
+      if (typeResponse.ok) {
+        const typeData = await typeResponse.json()
+        exerciseTypeId = typeData.id
+      }
+    } catch (e) {
+      console.warn('Could not create exercise type, continuing anyway', e)
+    }
+  }
+  
+  // Create exercise
+  const exercisePayload: any = {
+    exercise_name: data.exercise_name,
+    exercise_name_legacy: data.exercise_name,
+    muscle_group: muscleGroupId
+  }
+  
+  if (exerciseTypeId) {
+    exercisePayload.exercise_type = exerciseTypeId
+  }
+  
+  const response = await fetch(`${API_BASE}/exercises/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(exercisePayload)
+  })
+  
+  if (!response.ok) throw new Error(`Failed to create exercise: ${response.status}`)
+  return response.json()
+}
+
 /* ----- POST FUNCTIONS ----- */
 
 // Create a new session

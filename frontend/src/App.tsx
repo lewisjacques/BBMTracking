@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 import { DayView } from './views/DayView'
 import { WeekView } from './views/WeekView'
 import { MonthView } from './views/MonthView'
+import { ExercisesView } from './views/ExercisesView'
 import { LoginPage } from './views/LoginPage'
 import { ChevronLeft, ChevronRight, Dumbbell, LogOut, Settings } from 'lucide-react'
 import { addDays, subDays, addMonths, subMonths, format, startOfWeek, startOfMonth } from 'date-fns'
 import { User } from './api/client'
 
-type ViewType = 'day' | 'week' | 'month'
+type ViewType = 'day' | 'week' | 'month' | 'exercises'
 
 export default function App() {
   const [view, setView] = useState<ViewType>('day')
@@ -74,7 +75,9 @@ export default function App() {
     ? format(date, 'EEEE, MMMM d, yyyy')
     : view === 'week'
     ? `Week of ${format(weekStart, 'MMMM d, yyyy')}`
-    : format(monthStart, 'MMMM yyyy')
+    : view === 'month'
+    ? format(monthStart, 'MMMM yyyy')
+    : 'Exercises Library'
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0f172a', display: 'flex', flexDirection: 'column' }}>
@@ -247,9 +250,25 @@ export default function App() {
               >
                 Month View
               </button>
+              <button
+                onClick={() => setView('exercises')}
+                style={{
+                  padding: '0.5rem 1rem',
+                  borderRadius: '0.375rem',
+                  backgroundColor: view === 'exercises' ? 'rgb(37, 99, 235)' : 'transparent',
+                  color: 'white',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontWeight: view === 'exercises' ? '600' : '400',
+                  transition: 'all 0.2s'
+                }}
+              >
+                Exercises
+              </button>
             </div>
 
-            {/* Date Navigation */}
+            {/* Date Navigation - Only show for calendar views */}
+            {view !== 'exercises' && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', justifyContent: 'space-between' }}>
               <button
                 onClick={handlePrevious}
@@ -337,6 +356,7 @@ export default function App() {
                 <ChevronRight style={{ width: '16px', height: '16px' }} />
               </button>
             </div>
+            )}
           </div>
         </div>
       </header>
@@ -346,6 +366,7 @@ export default function App() {
         {view === 'day' && <DayView date={date} />}
         {view === 'week' && <WeekView startDate={weekStart} onDayClick={handleDayClick} />}
         {view === 'month' && <MonthView startDate={monthStart} onDayClick={handleDayClick} />}
+        {view === 'exercises' && <ExercisesView />}
       </main>
     </div>
   )
