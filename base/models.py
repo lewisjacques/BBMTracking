@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
+from base.utils.user_context import UserSchemaManager
+
 
 class MuscleGroup(models.Model):
     muscle_group_name = models.CharField(max_length=100)
@@ -19,9 +22,15 @@ class Exercise(models.Model):
     exercise_type = models.ForeignKey(ExerciseType, on_delete=models.PROTECT, null=True, blank=True)
 
 class Session(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     date = models.DateField()
     notes = models.TextField(blank=True, default='')
     completed = models.BooleanField(default=True)
+    
+    objects = UserSchemaManager()
+    
+    def __str__(self):
+        return f"Session {self.date} ({self.user.email if self.user else 'Unknown'})"
 
 # Each SessionEntry belongs to one Session
 class SessionEntry(models.Model):
@@ -32,3 +41,5 @@ class SessionEntry(models.Model):
     # Char at the moment because there are time stamps in there that need handling differently
     weight = models.CharField(max_length=50)
     status = models.CharField(max_length=50)
+    
+    objects = UserSchemaManager()

@@ -1,33 +1,13 @@
 # Fitness Program 2.0
 
-A full-stack fitness tracking application with Django REST Framework backend and React frontend.
-
-## Project Structure
-
-```
-program_viewer/
-├── backend/              # Django REST API
-│   ├── api/              # REST API endpoints (ViewSets)
-│   ├── base/             # Core models (Exercise, Session, SessionEntry, MuscleGroup, ExerciseType)
-│   ├── program_viewer/   # Django settings & WSGI
-│   ├── manage.py         # Django management
-│   └── db.sqlite3        # Development database
-│
-├── frontend/             # React + TypeScript + Vite
-│   ├── src/
-│   │   ├── components/   # Reusable UI components (Button, Table)
-│   │   ├── views/        # Page components (DayView, WeekView)
-│   │   ├── api/          # TypeScript API client
-│   │   ├── App.tsx       # Main component
-│   │   └── main.tsx      # Entry point
-│   ├── package.json
-│   ├── vite.config.ts
-│   └── tsconfig.json
-│
-└── README.md
-```
+Professional full-stack fitness tracking application with JWT authentication, multi-tenant data isolation, and responsive React frontend.
 
 ## Quick Start
+
+### Prerequisites
+- Python 3.11+ with virtual environment
+- Node.js 18+
+- PostgreSQL 15 (training_program_db database)
 
 ### Backend Setup
 
@@ -35,7 +15,7 @@ program_viewer/
 # Activate virtual environment
 source ../program_venv/bin/activate
 
-# Run migrations (if needed)
+# Run migrations
 python manage.py migrate
 
 # Start development server
@@ -59,180 +39,131 @@ npm run dev
 Frontend runs on: `http://localhost:5173`
 API requests are proxied to `http://localhost:8000`
 
+## Architecture
+
+### Multi-Tenant Data Isolation
+- **Shared tables** (public schema): auth_user, base_exercise, base_musclegroup, base_exercisetype
+- **User-specific tables** (user_{id} schemas): base_session, base_sessionentry
+- **Automatic schema switching** via `UserSchemaViewSetMixin` - sets PostgreSQL search_path on all requests
+
+### Schema Management Architecture
+The `base/utils/user_context.py` module provides:
+- **`create_user_schema(user_id)`**: Creates PostgreSQL schema + tables on registration
+- **`UserSchemaManager`**: Custom ORM manager ensuring queries use correct schema
+- **`user_schema_context(user)`**: Context manager for temporary schema switching
+- **`activate()`**: Method on User model for Django shell access to user's schema
+
+### Authentication Flow
+1. User registers → `create_user_schema()` creates user_{id} schema with tables
+2. JWT tokens issued (1h access, 7d refresh) via CustomTokenObtainPairSerializer
+3. Frontend stores tokens in localStorage
+4. Each request includes `Authorization: Bearer {token}`
+5. `UserSchemaViewSetMixin` automatically sets database schema context via dispatch()
+
 ## Features
 
-### Backend (Django REST Framework)
-- **Models:** Exercise, Session, SessionEntry, MuscleGroup, ExerciseType
-- **ViewSets:** 4 RESTful endpoints with filtering and search
-- **Serializers:** Separate Detail (read) and Create (write) versions
-- **Filtering:** By date range, muscle group, exercise type, completion status
+### Backend
+- ✅ JWT token-based authentication (email-based login)
+- ✅ Schema-per-user multi-tenancy
+- ✅ Automatic schema creation on registration
+- ✅ Advanced filtering (date range, muscle group, exercise)
+- ✅ Split serializers (Detail/Create versions)
+- ✅ Duplicate exercise detection in sessions
 
-### Frontend (React + TypeScript)
-- **Day View:** Detailed exercise table for a selected day with stats
-- **Week View:** Week overview with daily stats and muscle group distribution
-- **Navigation:** Date picker with previous/next controls
-- **Responsive:** Mobile and desktop layouts using Tailwind CSS
+### Frontend
+- ✅ Professional dark theme UI
+- ✅ Login page with register tab
+- ✅ User settings dropdown (top-right, all pages)
+- ✅ Day/Week/Month view toggles
+- ✅ Responsive refactored components
+- ✅ Token-based request authentication
+- ✅ TypeScript type safety
 
-## API Endpoints
+## API Quick Reference
 
-All endpoints at `http://localhost:8000`:
-
+### Authentication (`/api/auth/`)
 ```
-GET    /exercises/                    # List exercises
-POST   /exercises/                    # Create exercise
-GET    /exercises/{id}/               # Get exercise
-PUT    /exercises/{id}/               # Update exercise
-DELETE /exercises/{id}/               # Delete exercise
-
-GET    /sessions/                     # List sessions (with filters)
-POST   /sessions/                     # Create session
-GET    /sessions/{id}/                # Get session
-PUT    /sessions/{id}/                # Update session
-DELETE /sessions/{id}/                # Delete session
-
-GET    /session-entries/              # List entries
-POST   /session-entries/              # Add entry to session
-GET    /session-entries/{id}/         # Get entry
-PUT    /session-entries/{id}/         # Update entry
-DELETE /session-entries/{id}/         # Delete entry
-
-GET    /muscle-groups/                # List muscle groups
-GET    /muscle-groups/{id}/           # Get muscle group
+POST   /auth/register/         Register (creates user schema)
+POST   /auth/login/            Login (returns tokens)
+POST   /auth/refresh/          Refresh access token
+GET    /auth/me/               Get current user
+POST   /auth/logout/           Logout
 ```
 
-### Query Parameters
+### Fitness Data (`/api/`)
+```
+Sessions:     GET/POST /sessions/, GET/PUT/DELETE /sessions/{id}/
+Entries:      GET/POST /session-entries/, GET/PUT/DELETE /session-entries/{id}/
+Exercises:    GET/POST /exercises/, GET/PUT/DELETE /exercises/{id}/
+Muscle Groups: GET /muscle-groups/, GET /muscle-groups/{id}/
+```
 
-**Sessions:**
-- `date_from=YYYY-MM-DD` - Filter from date
-- `date_to=YYYY-MM-DD` - Filter to date
-- `muscle_group_id=1` - Filter by muscle group
-- `exercise_id=1` - Filter by exercise
-- `completed=true` - Filter by completion status
-
-**Exercises:**
-- `muscle_group=1` - Filter by muscle group
-- `exercise_type=1` - Filter by exercise type
-- `search=query` - Search by name
+**See PROJECT_STRUCTURE.md for complete endpoint documentation.**
 
 ## Technology Stack
 
-### Backend
-- Django 5.2.9
-- Django REST Framework 3.16.1
-- SQLite (development) / PostgreSQL (production)
-- Python 3.11+
+| Backend | Frontend |
+|---------|----------|
+| Django 5.2.9 | React 18.2 |
+| Django REST Framework 3.16 | TypeScript 5.2 |
+| djangorestframework-simplejwt | Vite 5.0 |
+| PostgreSQL 15 | Tailwind CSS 3.3 |
+| psycopg2 | date-fns 3.0 |
+| Python 3.11+ | Lucide React |
 
-### Frontend
-- React 18.2
-- TypeScript 5.2
-- Vite 5.0
-- Tailwind CSS 3.3
-- TanStack Table v8
-- date-fns 3.0
-- Lucide React icons
+## Documentation
 
-## Development
+### Complete Reference
+**PROJECT_STRUCTURE.md** contains:
+- Complete directory layout with descriptions
+- Detailed architecture explanation
+- Full API endpoint reference with query parameters
+- Development workflow and guidelines
+- Deployment checklist
 
-### Install Dependencies
+### This README covers:
+- Quick start (backend & frontend setup)
+- Architecture overview
+- Feature list
+- Common tasks and troubleshooting
 
-Backend:
+## Common Tasks
+
+### Import Historical Data
 ```bash
-source ../program_venv/bin/activate
-pip install -r requirements.txt  # if exists
-```
-
-Frontend:
-```bash
-cd frontend
-npm install
+python manage.py import_sessions
 ```
 
 ### Run Tests
-
-Backend:
 ```bash
+# Backend
 python manage.py test
-```
 
-Frontend:
-```bash
+# Frontend
 cd frontend
 npm run lint
 ```
 
 ### Build for Production
-
-Frontend:
 ```bash
 cd frontend
 npm run build
+# Output: frontend/dist/
 ```
-
-Output: `frontend/dist/`
-
-## Environment Variables
-
-### Backend
-Configure in `program_viewer/settings.py`:
-- `DEBUG = False` for production
-- `ALLOWED_HOSTS = [...]` for deployment
-- `DATABASES` for PostgreSQL
-
-### Frontend
-Create `frontend/.env`:
-```
-VITE_API_URL=http://your-backend-url
-```
-
-## Deployment
-
-### Backend
-Deploy to Cloud Run, Heroku, or any Python host with Django support.
-
-### Frontend
-Deploy `frontend/dist/` to:
-- Vercel
-- Netlify
-- GitHub Pages
-- Cloud Storage (GCS)
 
 ## Troubleshooting
 
-### API calls failing
-1. Ensure Django backend is running on `http://localhost:8000`
-2. Check CORS configuration if needed
-3. Verify database has data (run import_sessions.py if empty)
+### Port Conflicts
+- Backend: 8000
+- Frontend: 5173
 
-### Styles not showing
-```bash
-cd frontend
-rm -rf node_modules
-npm install
-npm run dev
-```
+### API Calls Failing
+1. Ensure both servers are running
+2. Check browser console for errors
+3. Verify tokens in localStorage: `window.localStorage`
+4. Check Django logs for 401/403 errors
 
-### Port conflicts
-- Django: Change `runserver` port
-- Frontend: Edit `frontend/vite.config.ts` port
-
-## Data Import
-
-Import historical workout data:
-```bash
-python manage.py import_sessions
-```
-
-This command:
-- Reads CSV files from `_legacy/` folder
-- Creates exercises, muscle groups, and exercise types
-- Populates sessions and session entries
-
-## Next Steps
-
-- [ ] Add CORS configuration for production
-- [ ] Set up PostgreSQL database
-- [ ] Implement authentication (JWT)
-- [ ] Add edit/delete UI functionality
-- [ ] Create session/entry forms
-- [ ] Set up CI/CD pipeline
-- [ ] Deploy to production
+### Database Issues
+- Connect: `psql -U ljw -d training_program_db`
+- List schemas: `\dn`
+- Check user tables: `SELECT * FROM <user>.base_session;`
