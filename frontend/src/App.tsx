@@ -1,16 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { DayView } from './views/DayView'
 import { WeekView } from './views/WeekView'
 import { MonthView } from './views/MonthView'
-import { Button } from './components/ui/button'
-import { ChevronLeft, ChevronRight, Dumbbell } from 'lucide-react'
+import { LoginPage } from './views/LoginPage'
+import { ChevronLeft, ChevronRight, Dumbbell, LogOut, Settings } from 'lucide-react'
 import { addDays, subDays, addMonths, subMonths, format, startOfWeek, startOfMonth } from 'date-fns'
+import { User } from './api/client'
 
 type ViewType = 'day' | 'week' | 'month'
 
 export default function App() {
   const [view, setView] = useState<ViewType>('day')
   const [date, setDate] = useState(new Date())
+  const [user, setUser] = useState<User | null>(null)
+  const [showUserMenu, setShowUserMenu] = useState(false)
+
+  useEffect(() => {
+    const token = localStorage.getItem('access_token')
+    if (token) {
+      // User is logged in
+      const userData = localStorage.getItem('user')
+      if (userData) {
+        setUser(JSON.parse(userData))
+      }
+    }
+  }, [])
 
   const handlePrevious = () => {
     if (view === 'day') {
@@ -32,6 +46,18 @@ export default function App() {
     }
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem('access_token')
+    localStorage.removeItem('refresh_token')
+    localStorage.removeItem('user')
+    setUser(null)
+    setShowUserMenu(false)
+  }
+
+  if (!user) {
+    return <LoginPage onLoginSuccess={(newUser) => setUser(newUser)} />
+  }
+
   const weekStart = startOfWeek(date)
   const monthStart = startOfMonth(date)
   const dateLabel = view === 'day' 
@@ -50,25 +76,108 @@ export default function App() {
         padding: '2rem 1.5rem'
       }}>
         <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
-          {/* Title Section */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
-            <div style={{ 
-              padding: '0.5rem', 
-              background: 'linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)',
-              borderRadius: '0.5rem'
-            }}>
-              <Dumbbell style={{ width: '24px', height: '24px', color: 'white' }} />
+          {/* Title Section with User Menu */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <div style={{ 
+                padding: '0.5rem', 
+                background: 'linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)',
+                borderRadius: '0.5rem'
+              }}>
+                <Dumbbell style={{ width: '24px', height: '24px', color: 'white' }} />
+              </div>
+              <h1 style={{ 
+                fontSize: '2.25rem',
+                fontWeight: 'bold',
+                background: 'linear-gradient(90deg, #60a5fa 0%, #22d3ee 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                margin: 0
+              }}>
+                Badgers, Barbells & Magpies
+              </h1>
             </div>
-            <h1 style={{ 
-              fontSize: '2.25rem',
-              fontWeight: 'bold',
-              background: 'linear-gradient(90deg, #60a5fa 0%, #22d3ee 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
-              Fitness Tracker
-            </h1>
+            {/* User Menu */}
+            <div style={{ position: 'relative' }}>
+              <button
+                onClick={() => setShowUserMenu(!showUserMenu)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '0.5rem',
+                  backgroundColor: 'rgba(71, 85, 105, 0.2)',
+                  border: '1px solid rgba(71, 85, 105, 0.3)',
+                  color: 'white',
+                  cursor: 'pointer',
+                  fontSize: '0.875rem',
+                  transition: 'all 0.2s'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(71, 85, 105, 0.3)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(71, 85, 105, 0.2)'
+                }}
+              >
+                <Settings style={{ width: '16px', height: '16px' }} />
+                {user.first_name || user.email}
+              </button>
+              {showUserMenu && (
+                <div style={{
+                  position: 'absolute',
+                  top: 'calc(100% + 0.5rem)',
+                  right: 0,
+                  backgroundColor: '#1e293b',
+                  border: '1px solid rgba(71, 85, 105, 0.3)',
+                  borderRadius: '0.5rem',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
+                  zIndex: 50,
+                  minWidth: '200px',
+                  overflow: 'hidden'
+                }}>
+                  <div style={{
+                    padding: '0.75rem 1rem',
+                    borderBottom: '1px solid rgba(71, 85, 105, 0.2)',
+                    fontSize: '0.875rem',
+                    color: '#cbd5e1'
+                  }}>
+                    <p style={{ fontWeight: '600', color: 'white', margin: '0 0 0.25rem 0' }}>
+                      {user.first_name && user.last_name ? `${user.first_name} ${user.last_name}` : user.username}
+                    </p>
+                    <p style={{ margin: 0, color: '#94a3b8' }}>{user.email}</p>
+                  </div>
+                  <button
+                    onClick={handleLogout}
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem 1rem',
+                      backgroundColor: 'transparent',
+                      border: 'none',
+                      color: '#ef4444',
+                      cursor: 'pointer',
+                      fontSize: '0.875rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      transition: 'all 0.2s',
+                      textAlign: 'left'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(239, 68, 68, 0.1)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent'
+                    }}
+                  >
+                    <LogOut style={{ width: '16px', height: '16px' }} />
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
           
           {/* Controls Section */}

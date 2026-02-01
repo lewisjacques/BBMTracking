@@ -3,6 +3,18 @@ const API_BASE = typeof window !== 'undefined' && window.location.hostname === '
   ? '/api' 
   : 'http://localhost:8000'
 
+// Helper to get authorization headers
+function getAuthHeaders(): Record<string, string> {
+  const token = localStorage.getItem('access_token')
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json'
+  }
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`
+  }
+  return headers
+}
+
 export interface Exercise {
   id: number
   exercise_name: string
@@ -36,7 +48,17 @@ export interface MuscleGroup {
   muscle_group_name: string
 }
 
-// Fetch sessions with optional filters
+/*
+Call the API defined as a constant at the top of the file, to return the data from the 
+backend to the front end. fetchSessions is called in DayView.tsx to get the sessions 
+to display. The function returns a Promise object, this is an object that has not yet been
+resolved so requires the use of 'await' when calling it to wait for the data to be returned.
+The async keyword actually allows us to return unresolved Promises from the function, rather
+than creating a string variable with await response.text() and returning that
+*/
+
+/* ----- GET FUNCTIONS ----- */
+
 export async function fetchSessions(params?: {
   dateFrom?: string
   dateTo?: string
@@ -56,18 +78,13 @@ export async function fetchSessions(params?: {
   const url = `${API_BASE}/sessions/${query ? '?' + query : ''}`
   
   console.log('Fetching sessions from:', url)
-  const response = await fetch(url)
+  const response = await fetch(url, {
+    headers: getAuthHeaders()
+  })
   console.log('Response status:', response.status)
   
-  if (!response.ok) {
-    const text = await response.text()
-    console.error('Failed to fetch sessions:', response.status, text)
-    throw new Error(`Failed to fetch sessions: ${response.status}`)
-  }
-  
-  const data = await response.json()
-  console.log('Sessions data:', data)
-  return data
+  if (!response.ok) throw new Error(`Failed to fetch sessions: ${response.status}`)
+  return response.json()
 }
 
 // Fetch exercises with optional filters
@@ -95,6 +112,8 @@ export async function fetchMuscleGroups(): Promise<MuscleGroup[]> {
   return response.json()
 }
 
+/* ----- POST FUNCTIONS ----- */
+
 // Create a new session
 export async function createSession(data: {
   date: string
@@ -104,19 +123,12 @@ export async function createSession(data: {
   console.log('API call: createSession', data)
   const response = await fetch(`${API_BASE}/sessions/`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: getAuthHeaders(),
     body: JSON.stringify(data),
   })
   
-  const responseText = await response.text()
-  console.log('Create session response status:', response.status)
-  console.log('Create session response body:', responseText)
-  
-  if (!response.ok) {
-    throw new Error(`Failed to create session: ${response.status} - ${responseText}`)
-  }
-  
-  return JSON.parse(responseText)
+  if (!response.ok) throw new Error(`Failed to create session: ${response.status}`)
+  return response.json()
 }
 
 // Add exercise to session
@@ -129,35 +141,25 @@ export async function addSessionEntry(data: {
   console.log('API call: addSessionEntry', data)
   const response = await fetch(`${API_BASE}/session-entries/`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: getAuthHeaders(),
     body: JSON.stringify(data),
   })
   
-  const responseText = await response.text()
-  console.log('Response status:', response.status)
-  console.log('Response body:', responseText)
-  
-  if (!response.ok) {
-    throw new Error(`Failed to add session entry: ${response.status} - ${responseText}`)
-  }
-  
-  return JSON.parse(responseText)
+  if (!response.ok) throw new Error(`Failed to add session entry: ${response.status}`)
+  return response.json()
 }
+
+/* ----- DELETE FUNCTIONS ----- */
 
 // Delete session entry
 export async function deleteSessionEntry(id: number): Promise<void> {
   console.log('API call: deleteSessionEntry', id)
   const response = await fetch(`${API_BASE}/session-entries/${id}/`, {
     method: 'DELETE',
+    headers: getAuthHeaders()
   })
   
-  const responseText = await response.text()
-  console.log('Delete session entry response status:', response.status)
-  console.log('Delete session entry response body:', responseText)
-  
-  if (!response.ok) {
-    throw new Error(`Failed to delete session entry: ${response.status} - ${responseText}`)
-  }
+  if (!response.ok) throw new Error(`Failed to delete session entry: ${response.status}`)
 }
 
 // Delete session
@@ -165,16 +167,13 @@ export async function deleteSession(id: number): Promise<void> {
   console.log('API call: deleteSession', id)
   const response = await fetch(`${API_BASE}/sessions/${id}/`, {
     method: 'DELETE',
+    headers: getAuthHeaders()
   })
   
-  const responseText = await response.text()
-  console.log('Delete session response status:', response.status)
-  console.log('Delete session response body:', responseText)
-  
-  if (!response.ok) {
-    throw new Error(`Failed to delete session: ${response.status} - ${responseText}`)
-  }
+  if (!response.ok) throw new Error(`Failed to delete session: ${response.status}`)
 }
+
+/* ----- PATCH/UPDATE FUNCTIONS ----- */
 
 // Update session
 export async function updateSession(
@@ -183,9 +182,97 @@ export async function updateSession(
 ): Promise<Session> {
   const response = await fetch(`${API_BASE}/sessions/${id}/`, {
     method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
+    headers: getAuthHeaders(),
     body: JSON.stringify(data),
   })
   if (!response.ok) throw new Error('Failed to update session')
+  return response.json()
+}
+
+/* ----- AUTH FUNCTIONS ----- */
+
+export interface User {
+  id: number
+  email: string
+  first_name: string
+  last_name: string
+  username: string
+}
+
+export interface AuthTokens {
+  access: string
+  refresh: string
+}
+
+// Register new user
+export async function register(data: {
+  email: string
+  password: string
+  password2: string
+  first_name?: string
+  last_name?: string
+}): Promise<User> {
+  const response = await fetch(`${API_BASE}/auth/register/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+  const result = await response.json()
+  if (!response.ok) {
+    throw new Error(JSON.stringify(result))
+  }
+  return result.user
+}
+
+// Login user
+export async function login(data: {
+  email: string
+  password: string
+}): Promise<AuthTokens> {
+  const response = await fetch(`${API_BASE}/auth/login/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+  const result = await response.json()
+  if (!response.ok) {
+    throw new Error(JSON.stringify(result))
+  }
+  return result
+}
+
+// Get current user
+export async function getCurrentUser(token: string): Promise<User> {
+  const response = await fetch(`${API_BASE}/auth/me/`, {
+    method: 'GET',
+    headers: { 
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    },
+  })
+  if (!response.ok) throw new Error('Failed to fetch current user')
+  return response.json()
+}
+
+// Logout user
+export async function logout(token: string): Promise<void> {
+  const response = await fetch(`${API_BASE}/auth/logout/`, {
+    method: 'POST',
+    headers: { 
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    },
+  })
+  if (!response.ok) throw new Error('Failed to logout')
+}
+
+// Refresh token
+export async function refreshToken(token: string): Promise<AuthTokens> {
+  const response = await fetch(`${API_BASE}/auth/refresh/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ refresh: token }),
+  })
+  if (!response.ok) throw new Error('Failed to refresh token')
   return response.json()
 }
