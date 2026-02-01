@@ -46,8 +46,8 @@ export function ExercisesTable({ allEntries, onDelete }: ExercisesTableProps) {
                   <TableCell style={{ fontWeight: '500', color: 'white' }}>
                     {entry.exercise.exercise_name}
                   </TableCell>
-                  <TableCell style={{ color: '#cbd5e1' }}>{entry.exercise.muscle_group.muscle_group_name}</TableCell>
-                  <TableCell style={{ color: '#cbd5e1' }}>{entry.exercise.exercise_type.type_name}</TableCell>
+                  <TableCell style={{ color: '#cbd5e1' }}>{entry.exercise.muscle_group?.muscle_group_name || '-'}</TableCell>
+                  <TableCell style={{ color: '#cbd5e1' }}>{entry.exercise.exercise_type?.type_name || '-'}</TableCell>
                   <TableCell style={{ color: '#cbd5e1', fontWeight: '600' }}>{entry.weight}</TableCell>
                   <TableCell>
                     <span style={{

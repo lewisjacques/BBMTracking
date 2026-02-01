@@ -1,0 +1,664 @@
+Date,Exercise,Result,Weight,Status
+2023-02-04,Hip Thrusts - Barbell,If 'Use' isn't checked this turns to ,0.00,Static
+2023-02-04,Hip Thrusts - Barbell,Adding a dash in between exercise and weight type for the naming. If text is dash only then don't default to ,0.00,Static
+2023-02-17,Shoulder Press - Dumbell,20 x 8kg x 1,8.00,Static
+2023-02-17,Assisted Reverse Lunges - Smith Machine,27.5 x 8 x 4 (each leg),27.50,Static
+2023-02-17,Hip Thrusts - Barbell,20 25 28 x 10 x 1,28.00,Static
+2023-03-24,Squat - Back - Barbell,30 40 40 45,45.00,Static
+2023-03-24,Hip Thrusts - Barbell,WW: 60,60.00,Working
+2023-03-24,Deadlift - Barbell,WW: 60,60.00,Working
+2023-03-24,Squat - Back - Barbell,Ww: 60,60.00,Working
+2023-03-24,Bulgarian Split Squat - Barbell,Working weight 35kg,35.00,Working
+2023-03-24,Squat - Back - Barbell,Working weight 60kg,60.00,Working
+2023-03-24,Squat - Front - Barbell,Working weight 40kg,40.00,Working
+2023-03-24,Hack Squat - Machine,Working weight 60kg,60.00,Working
+2023-03-24,Hip Thrusts - Barbell,Working weight 60kg,60.00,Working
+2023-03-24,Hack Squat - Machine,Peak 65,65.00,Peak
+2023-03-24,Squat - Back - Barbell,Working weight 55kg,55.00,Working
+2023-03-24,Squat - Front - Barbell,Working weight 35kg,35.00,Working
+2023-03-24,Hip Thrusts - Barbell,Ww: 60,60.00,Working
+2023-03-24,Hip Thrusts - Barbell,1 x 8 x 70kg,70.00,Static
+2023-03-24,Squat - Front - Barbell,WW: 45,45.00,Working
+2023-03-24,Squat - Back - Barbell,Bar warm up,0.00,Static
+2023-03-24,Bulgarian Split Squat - Barbell,Working weight 30kg,30.00,Working
+2023-03-24,Romanian Deadlifts - Barbell,Working weight 50kg,50.00,Working
+2023-03-24,Plank - Body,2 min 1 sec,2.00,Static
+2023-03-31,Squat - Front - Barbell,Ww- 40,40.00,Working
+2023-03-31,Squat - Back - Barbell,New peak - 65,65.00,Peak
+2023-03-31,Good Mornings - Barbell,Peak - 60 (too much),60.00,Peak
+2023-03-31,Deadlift - Stiff Leg - Barbell,50,50.00,Static
+2023-03-31,Lunges - Dumbell,5 plate,5.00,Static
+2023-03-31,Plank - Body,2 mins 06,6.00,Static
+2023-03-31,Bulgarian Split Squat - Barbell,35,35.00,Static
+2023-04-01,Bench Press - Flat - Barbell,Peak - 27.5,27.50,Peak
+2023-04-05,Plank - Body,2:10,2:10,Static
+2023-04-08,Squat - Back - Barbell,Peak: 70,70.00,Peak
+2023-04-08,Plank - Body,1 min 13,13.00,Static
+2023-04-08,Squat - Front - Barbell,Working: 40,40.00,Working
+2023-04-08,Hip Thrusts - Barbell,Ww: 80 yeeeeaaaaa,80.00,Working
+2023-04-08,Bulgarian Split Squat - Barbell,Pw: 45,45.00,Peak
+2023-04-08,Good Mornings - Barbell,Ww:40,40.00,Working
+2023-04-14,Deadlift - Barbell,40,40.00,Static
+2023-04-14,Squat - Back - Barbell,Ww 70,70.00,Working
+2023-04-14,Bulgarian Split Squat - Barbell,45,45.00,Static
+2023-04-14,Squat - Front - Barbell,Ww 40,40.00,Working
+2023-04-14,Lunges - Dumbell,5,5.00,Static
+2023-04-14,Leg Curls - Cable,20,20.00,Static
+2023-04-14,Good Mornings - Barbell,40,40.00,Static
+2023-04-25,Lateral Raise - Bent Over - Dumbell,Ww 10,10.00,Working
+2023-04-25,Shoulder Press - Dumbell,10,10.00,Static
+2023-04-25,Leg Curls - Cable,Leg extensions Ww 30,30.00,Working
+2023-04-25,Leg Curls - Cable,Ww 30,30.00,Working
+2023-04-25,Tricep Extension Pulldown - Cable,Ww 10,10.00,Working
+2023-04-25,Tricep Extension Pulldown - Cable,Upright row - 15,15.00,Static
+2023-05-06,Squat - Back - Barbell,50,50.00,Static
+2023-05-06,Squat - Front - Barbell,50,50.00,Static
+2023-05-09,Hip Thrusts - Barbell,Pw 90,90.00,Peak
+2023-05-09,Bench Press - Flat - Barbell,Ww 30,30.00,Working
+2023-05-09,Shoulder Press - Dumbell,Pw 10,10.00,Peak
+2023-05-09,Tricep Extension Pulldown - Cable,Ww 12.5,12.50,Working
+2023-05-09,Crunches - Weighted - Cable,15,15.00,Static
+2023-05-09,Bulgarian Split Squat - Barbell,45,45.00,Static
+2023-05-09,Good Mornings - Barbell,Ww 40,40.00,Working
+2023-05-11,Front Raises - Dumbell,7.5,7.50,Static
+2023-05-11,Plank - Body,1min 21,21.00,Static
+2023-05-11,Bench Press - Narrow Grip - Barbell,Elbows tucked tickle those nipples with the bar!,0.00,Static
+2023-05-11,Front Raises - Dumbell,Stare yourself in the mirror for this one - psychs me up,0.00,Static
+2023-05-11,Pectoral Flys - Cable,HIT THE TIDDIES!!,0.00,Static
+2023-05-11,Pectoral Flys - Cable,21,21.00,Static
+2023-05-11,Hip Huggers - Dumbell,Not long until lew lew hugs! Smash themmmm!,0.00,Static
+2023-05-11,Hip Huggers - Dumbell,10,10.00,Static
+2023-05-11,Hip Huggers - Dumbell,That,0.00,Static
+2023-05-11,Sumo Squats - Dumbell,17.5,17.50,Static
+2023-05-11,Sumo Squats - Dumbell,You got this gorgeous  nice and DEEEEP,0.00,Static
+2023-05-11,Leg Curls - Cable,25,25.00,Static
+2023-05-11,Leg Curls - Cable,Squeeze those cheeks!,0.00,Static
+2023-05-11,Plank - Body,Appreciate not being walked on by fern or juni,0.00,Static
+2023-05-11,Bench Press - Narrow Grip - Barbell,Ww 25,25.00,Working
+2023-05-15,Romanian Deadlifts - Barbell,Ww 30,30.00,Working
+2023-05-15,Bulgarian Split Squat - Barbell,Ww 40,40.00,Working
+2023-05-15,Squat - Back - Barbell,Pw 55,55.00,Peak
+2023-05-15,Squat - Front - Barbell,Ww 40,40.00,Working
+2023-05-15,Shoulder Press - Dumbell,10,10.00,Static
+2023-05-15,Crunches - Weighted - Cable,15,15.00,Static
+2023-05-15,Bench Press - Flat - Barbell,Ww 30 (tough),30.00,Working
+2023-05-18,Leg Press - Machine,110,110.00,Static
+2023-05-18,Pectoral Flys - Cable,Pw 33,33.00,Peak
+2023-05-18,Bench Press - Flat - Barbell,Ww 30,30.00,Working
+2023-05-18,Squat - Back - Barbell,Ww 60,60.00,Working
+2023-05-18,Good Mornings - Barbell,Ww 40 (hard),40.00,Working
+2023-05-18,Hip Huggers - Dumbell,Pw 12.5 x2,12.50,Peak
+2023-05-18,Shoulder Press - Dumbell,Ww 10,10.00,Working
+2023-05-27,Bent-Over Rows - T-Bar,25,25.00,Static
+2023-05-27,Squat - Back - Barbell,55,55.00,Static
+2023-05-27,Good Mornings - Barbell,Bar,0.00,Static
+2023-05-27,Squat - Front - Barbell,35 (we 40 - deload),40.00,Static
+2023-05-30,Lateral Pull Down - Machine,35,35.00,Static
+2023-05-30,Romanian Deadlifts - Barbell,40,40.00,Static
+2023-05-30,ISO Lateral Row - Machine,20,20.00,Static
+2023-05-30,Hip Huggers - Dumbell,12.5 both arms,12.50,Static
+2023-05-30,Bent-Over Rows - Barbell,Ww 32.5,32.50,Working
+2023-05-30,Shoulder Press - Dumbell,Ww 8,8.00,Working
+2023-05-30,Hip Thrusts - Barbell,110,110.00,Static
+2023-06-01,Sumo Squats - Dumbell,New Ww:20,20.00,Working
+2023-06-01,Bent-Over Rows - Barbell,Pw 35 (hard),35.00,Peak
+2023-06-01,Front Raises - Dumbell,Pw 7.5 harrrrrdddd,7.50,Peak
+2023-06-01,Crunches - Weighted - Cable,You got this sister!!!!,0.00,Static
+2023-06-01,Leg Curls - Cable,ISO leg curl - 25,25.00,Static
+2023-06-02,Bench Press - Flat - Barbell,Ww 30,30.00,Working
+2023-06-02,Pectoral Flys - Cable,Ww: 26,26.00,Working
+2023-06-02,Shoulder Press - Dumbell,Pw 10 harrrrddd,10.00,Peak
+2023-06-02,Squat - Front - Barbell,40,40.00,Static
+2023-06-02,Squat - Back - Barbell,Pw 70,70.00,Peak
+2023-06-02,Bulgarian Split Squat - Barbell,Ww 40,40.00,Working
+2023-06-02,ISO Lateral Row - Machine,Ww 10,10.00,Working
+2023-06-05,Squat - Back - Barbell,Pw 75,75.00,Peak
+2023-06-05,Good Mornings - Barbell,Ww 30,30.00,Working
+2023-06-05,Bulgarian Split Squat - Barbell,Ww 40,40.00,Working
+2023-06-05,Sumo Squats - Dumbell,Pw 25,25.00,Peak
+2023-06-05,Hack Squat - Machine,Pw 50,50.00,Peak
+2023-06-05,Plank - Body,1:08,1:08,Static
+2023-06-05,Squat - Front - Barbell,Pw 45,0:00,Peak
+2023-06-16,ISO Lateral Leg Extensions - Machine,10 per leg,10.00,Static
+2023-06-16,Lateral Pull Down - Machine,7,7.00,Static
+2023-06-16,Bench Press - Flat - Barbell,25,25.00,Static
+2023-06-16,Shoulder Press - Dumbell,7.5,7.50,Static
+2023-06-19,Good Mornings - Barbell,Ww 30,30.00,Working
+2023-06-19,Sumo Squats - Dumbell,26,26.00,Static
+2023-06-19,Bent-Over Rows - Barbell,Ww 30,30.00,Working
+2023-06-19,Squat - Front - Barbell,Ww 45,45.00,Working
+2023-06-19,Bulgarian Split Squat - Barbell,45 (v hard),45.00,Static
+2023-06-19,Squat - Back - Barbell,Ww 45 (hard),45.00,Working
+2023-06-29,Crunches - Weighted - Cable,15,15.00,Static
+2023-06-29,Squat - Front - Barbell,45,45.00,Static
+2023-06-29,Bulgarian Split Squat - Dumbell,Pw: 35,35.00,Peak
+2023-06-29,Squat - Back - Barbell,Ww 40,40.00,Working
+2023-06-29,Pectoral Flys - Cable,26,26.00,Static
+2023-06-29,Bent-Over Rows - Barbell,30,30.00,Static
+2023-07-04,Lateral Pull Down - Cable,7,7.00,Static
+2023-07-04,Bent-Over Rows - Barbell,30,30.00,Static
+2023-07-04,Squat - Front - Barbell,50,50.00,Static
+2023-07-04,Bench Press - Flat - Barbell,55,55.00,Static
+2023-07-04,Bench Press - Flat - Barbell,Pw 30,30.00,Peak
+2023-07-05,Bench Press - Flat - Barbell,pw 30,30.00,Peak
+2023-07-05,Squat - Back - Barbell,55,55.00,Static
+2023-07-05,Bent-Over Rows - Barbell,30,30.00,Static
+2023-07-05,Lateral Pull Down - Cable,7,7.00,Static
+2023-07-05,Squat - Front - Barbell,50,50.00,Static
+2023-07-05,Hip Thrusts - B-Stance - Dumbell,Wish you could see me 'creepy gaze' you during this,0.00,Static
+2023-07-05,Curls - Simple - Dumbell,Curl whatever you feel comfortable with just try and imagine you're pressing your elbows against a wall behind you xx,0.00,Static
+2023-07-05,Front Raises - Dumbell,Will be light weight literally just lifting one dumbbell at a time out in front of you. Not a fun one but a good'n,0.00,Static
+2023-07-05,Tricep Extension Pulldown - Cable,Incase you need some tips xxx,0.00,Static
+2023-07-05,Bulgarian Split Squat - Barbell,Sorry to be mean to start with loolll. I love you loads have a nice session, 0.00,Static
+2023-07-12,Bench Press - Flat - Barbell,Pw 30,30.00,Peak
+2023-07-12,Front Raises - Dumbell,8,8.00,Static
+2023-07-12,Shoulder Press - Dumbell,10 pw,10.00,Peak
+2023-07-12,Pectoral Flys - Cable,19,19.00,Static
+2023-07-12,Squat - Front - Barbell,Failed 50 - 40 working weight,50.00,Working
+2023-07-12,Squat - Back - Barbell,50,50.00,Static
+2023-07-17,Bench Press - Flat - Barbell,30, 25 30.00,Static
+2023-07-17,ISO Lateral Row - Machine,25, 17.5 25.00,Static
+2023-07-17,Upright Row - Dumbell,20, 17.5 20.00,Static
+2023-07-17,Good Mornings - Barbell,30, 27.5 30.00,Static
+2023-07-17,Hip Thrusts - Barbell,70, 60 70.00,Static
+2023-07-17,Squat - Front - Barbell,35, 30 35.00,Static
+2023-07-19,Hack Squat - Machine,60,60.00,Static
+2023-07-19,Hip Thrusts - Barbell,90,90.00,Static
+2023-07-19,Hack Squat - Machine,40,40.00,Static
+2023-07-19,Bulgarian Split Squat - Dumbell,3,3.00,Static
+2023-07-19,Bent-Over Rows - Barbell,30,30.00,Static
+2023-07-19,Plank,1min,1.00,Static
+2023-07-19,Squat - Front - Barbell,35,35.00,Static
+2023-07-19,Squat - Back - Barbell,50,50.00,Static
+2023-07-26,Hack Squat - Machine,60,60.00,Static
+2023-07-26,Squat - Back - Barbell,50,50.00,Static
+2023-07-26,Squat - Front - Barbell,35,35.00,Static
+2023-07-26,Bench Press - Flat - Barbell,30,30.00,Static
+2023-07-26,Shoulder Press - Dumbell,10 x 2,10.00,Static
+2023-07-26,ISO Lateral Row - Machine,30,30.00,Static
+2023-08-11,Leg Press - Machine,60,60.00,Static
+2023-08-11,Bent-Over Rows - T-Bar,25,25.00,Static
+2023-08-11,Bulgarian Split Squat - Barbell,30 Ww,30.00,Working
+2023-08-11,Squat - Back - Barbell,50 pw,50.00,Peak
+2023-08-11,Squat - Front - Barbell,37.5,37.50,Static
+2023-08-18,ISO Lateral Row - Machine,7.5 x2,7.50,Static
+2023-08-18,Shoulder Press - Dumbell,10 (v hard),10.00,Static
+2023-08-18,Hip Huggers - Dumbell,10,10.00,Static
+2023-08-18,Kettlebell side bend,16,16.00,Static
+2023-08-18,Bench Press - Decline - Barbell,30,30.00,Static
+2023-08-23,Shoulder Press - Barbell,6 C 8 H,8.00,Static
+2023-08-23,Kettlebell side bend,16 (C) 20 (h),20.00,Static
+2023-08-23,Bench Press - Flat - Barbell,30, 22.5 30.00,Static
+2023-08-23,Shoulder Press - Barbell,Pw: 15 (can) 17.5 hope,17.50,Peak
+2023-09-11,Shoulder Press - Dumbell,10,10.00,Static
+2023-09-11,Bent-Over Rows - Barbell,30,30.00,Static
+2023-09-11,Bench Press - Flat - Barbell,30,30.00,Static
+2023-09-11,Squat - Back - Barbell,40,40.00,Static
+2023-10-03,Tricep Extension Pulldown - Cable,Peak weight 13.75,13.75,Peak
+2023-10-03,Squat - Front - Barbell,30,30.00,Static
+2023-10-03,Bench Press - Flat - Barbell,30,30.00,Static
+2023-10-03,Squat - Back - Barbell,30,30.00,Static
+2024-01-03,Plank - Body,1 x 1:06,1:06,Static
+2024-01-03,Crunches - Weighted - Cable,Working weight 12.5,12.50,Working
+2024-01-03,Shoulder Press - Dumbell,Working weight 6kg. DBs,6.00,Working
+2024-01-03,Bench Press - Lateral - Machine,Working weight 10kg,10.00,Working
+2024-01-03,Upright Row - Barbell,Working weight 20kg,20.00,Working
+2024-01-03,Shrugs - Barbell,Working weight 20kg,20.00,Working
+2024-01-03,Bench Press - Incline - Dumbell,Working weight  10kg DBs,10.00,Working
+2024-01-03,Pectoral Flys - Cable,Working weight 16kg,0:00,Working
+2024-01-07,Squat - Back - Barbell,Pw40,40.00,Peak
+2024-01-07,Bulgarian Split Squat - Barbell,Pw 25,25.00,Peak
+2024-01-07,Assisted Reverse Lunges - Smith Machine,Peak 24kg,24.00,Peak
+2024-01-07,Squat - Front - Barbell,Pw 35,35.00,Peak
+2024-01-07,Hip Thrusts - Barbell,Pw 70,70.00,Peak
+2024-01-07,Crunches - Weighted - Cable,Working weight 7.5kg,7.50,Working
+2024-01-07,KB Side Bend - Kettlebell,Working weight 16kg KB,16.00,Working
+2024-01-13,Hack Squat - Machine,30,30.00,Static
+2024-01-13,Squat - Back - Barbell,30,30.00,Static
+2024-01-13,Squat - Front - Barbell,35,35.00,Static
+2024-01-13,Reverse Deficit Lunges - Barbell,30,30.00,Static
+2024-01-13,Good Mornings - Barbell,30,30.00,Static
+2024-01-15,Lateral Pull Down - Cable,7,0:00,Static
+2024-01-15,Straight Arm Pushdown - Cable,7.5,12:00,Static
+2024-01-15,Curls - Simple - Dumbell,8,8.00,Static
+2024-01-15,Tricep Extension Pulldown - Cable,Pw 10,10.00,Peak
+2024-01-15,10min Intervals - Erg,2290m,0:00,Static
+2024-01-15,Plank - Body,0:55,0:55,Static
+2024-01-15,ISO Lateral Row - Machine,20,20.00,Static
+2024-01-22,Squat - Front - Barbell,35,35.00,Static
+2024-01-22,Squat - Back - Barbell,50,50.00,Static
+2024-01-22,Assisted Reverse Lunges - Smith Machine,30,30.00,Static
+2024-01-22,Hip Thrusts - Barbell,60,60.00,Static
+2024-01-29,Shoulder Press - Dumbell,Pw 6,6.00,Peak
+2024-01-29,Reverse flys ,5,5.00,Static
+2024-01-29,Bench Press - Flat - Barbell,Pw 20,20.00,Peak
+2024-01-29,Rear extension ,10,10.00,Static
+2024-01-29,Tricep Extension Pulldown - Cable,10,10.00,Static
+2024-02-13,Leg Press - Machine,70,70.00,Static
+2024-02-13,Romanian Deadlifts - Barbell,40,40.00,Static
+2024-02-13,Squat - Front - Barbell,40,40.00,Static
+2024-02-13,Shoulder Press - Dumbell,10,10.00,Static
+2024-02-13,Pectoral Flys - Cable,26,26.00,Static
+2024-02-13,Tricep Extension Pulldown - Cable,12.5,12.50,Static
+2024-03-11,KB Side Bend - Kettlebell,20,20.00,Static
+2024-03-11,Hip Huggers - Dumbell,8,8.00,Static
+2024-03-11,Shoulder Press - Dumbell,8,8.00,Static
+2024-03-11,Bench Press - Flat - Barbell,27.5,27.50,Static
+2024-03-11,Pectoral Flys - Cable,19,19.00,Static
+2024-03-11,Squat - Front - Barbell,Pw 30,30.00,Peak
+2024-03-11,Squat - Back - Barbell,37.5,37.50,Static
+2024-03-11,ISO Lateral Row - Machine,20,20.00,Static
+2024-03-22,Lateral Pull Down - Cable,6,6.00,Static
+2024-03-22,Seated Pulley Row - V-Grip - Cable,6,6.00,Static
+2024-03-22,Romanian Deadlifts - Barbell,40,40.00,Static
+2024-03-22,Tricep Extension Pulldown - Cable,8.75,8.75,Static
+2024-03-22,Rear Extension - Rope - Cable,3.75,3.75,Static
+2024-03-22,ISO Lateral Row - Machine,30,30.00,Static
+2024-03-22,Curls - Simple - Dumbell,6,6.00,Static
+2024-04-02,Tricep Extension Pulldown - Rope - Cable,8.75,8.75,Static
+2024-04-02,Rear Extension - Rope - Cable,5,5.00,Static
+2024-04-02,Pectoral Flys - Cable,26,26.00,Static
+2024-04-02,Bench Press - Lateral - Machine,10,10.00,Static
+2024-04-02,Bench Press - Incline - Dumbell,8,8.00,Static
+2024-04-02,1k Intervals - Run,20min 3.3k,20.00,Static
+2024-04-10,Romanian Deadlifts - Barbell,ww 25),25.00,Working
+2024-04-10,Good Mornings - Barbell,ww 35,35.00,Working
+2024-04-10,Bent-Over Rows - Barbell,ww25,25.00,Working
+2024-04-10,Dead Hang - Body,36 sec,0:00,Static
+2024-04-10,Leg Press - Machine,Pw 100,0:00,Peak
+2024-04-10,Plank - Body,1:00,1:00,Static
+2024-04-10,Squat - Back - Barbell,ww 50,50.00,Working
+2024-04-30,Bench Press - Incline - Dumbell,Ww 8,8.00,Working
+2024-04-30,Bench Press - Lateral - Machine,Pw 10,10.00,Peak
+2024-04-30,Curls - Wide Grip - Barbell,Pw 15,15.00,Peak
+2024-04-30,Rear Extension - Rope - Cable,Pw 5,5.00,Peak
+2024-04-30,Tricep Extension Pulldown - Rope - Cable,Ww 10,10.00,Working
+2024-04-30,Bench Press - Flat - Barbell,Pw 30,30.00,Peak
+2024-05-02,Lateral Pull Down - Machine,40,40.00,Static
+2024-05-02,ISO Lateral Row - Machine,30,30.00,Static
+2024-05-02,Squat - Back - Barbell,50,50.00,Static
+2024-05-02,Romanian Deadlifts - Barbell,40,40.00,Static
+2024-05-02,Leg Press - Machine,120,120.00,Static
+2024-05-31,Romanian Deadlifts - Barbell,30,30.00,Static
+2024-05-31,Bulgarian Split Squat - Dumbell,20,20.00,Static
+2024-05-31,Squat - Front - Barbell,30,30.00,Static
+2024-05-31,Leg Press - Machine,80,80.00,Static
+2024-10-14,Squat - Back - Barbell,Pw 40,40.00,Peak
+2024-10-14,Lunges - Dumbell,5,5.00,Static
+2024-10-14,KB Side Bend - Kettlebell,Ww 20,20.00,Working
+2024-10-14,Crunches - Weighted - Cable,15,15.00,Static
+2024-10-14,Romanian Deadlifts - Barbell,44,44.00,Static
+2024-10-20,Shoulder Press - Dumbell,10,10.00,Static
+2024-10-20,Front Raises - Dumbell,Pw 16,16.00,Peak
+2024-10-20,Lateral Raise - Standing - Dumbell,16,16.00,Static
+2024-10-20,Pectoral Flys - Cable,Pw 21.5,21.50,Peak
+2024-10-20,Lateral Pull Down - Cable,Pw 7,7.00,Peak
+2024-10-20,Bench Press - Flat - Barbell,25,25.00,Static
+2024-10-20,ISO Lateral Row - Machine,Pw 30,30.00,Peak
+2024-10-24,Shoulder Press - Dumbell,10,10.00,Static
+2024-10-24,Lateral Raise - Standing - Dumbell,Ww 6x2,6.00,Working
+2024-10-24,KB Side Bend - Kettlebell,Ww 24,24.00,Working
+2024-10-24,Lateral Pull Down - Cable,Ww 8,8.00,Working
+2024-10-24,Tricep Extension Pulldown - Rope - Cable,Ww 11.25,11.25,Working
+2024-10-24,Dead Hang - Body,4 sets of as long as you can,4.00,Static
+2024-10-28,RDLs b stance ,20,20.00,Static
+2024-10-29,Leg Press - Machine,Pw 100,100.00,Peak
+2024-10-29,Good Mornings - Barbell,Ww 10,10.00,Working
+2024-10-29,Bulgarian Split Squat - Dumbell,Ww 10,10.00,Working
+2024-10-31,Squat - Back - Barbell,Ww 50,50.00,Working
+2024-10-31,Good Mornings - Barbell,Ww 32.5,32.50,Working
+2024-10-31,Bulgarian Split Squat - Dumbell,32.5,32.50,Static
+2024-10-31,5k - Run,27.5,27.50,Static
+2025-01-02,Hack Squat - Machine,50,50.00,Static
+2025-01-02,Good Mornings - Barbell,Pw 32.5,32.50,Peak
+2025-01-02,Hip Thrusts - B-Stance - Dumbell,16,16.00,Static
+2025-01-02,1k Intervals - Run,15 mins,15.00,Static
+2025-01-02,Romanian Deadlifts - Barbell,32.5,32.50,Static
+2025-01-02,Bulgarian Split Squat - Dumbell,Pw 24,24.00,Peak
+2025-01-02,Squat - Back - Barbell,Pw 47.5,47.50,Peak
+2025-01-02,ISO Lateral Leg Extensions - Machine,15 each ,15.00,Static
+2025-01-06,1k Intervals - Run,4k,4.00,Static
+2025-01-06,Lateral Pull Down - Machine,Pw 8,8.00,Peak
+2025-01-06,Hip Huggers - Dumbell,10,10.00,Static
+2025-01-06,Shrugs - Barbell,32.5,32.50,Static
+2025-01-06,Shoulder Press - Dumbell,10,10.00,Static
+2025-01-06,Pectoral Flys - Cable,26,26.00,Static
+2025-01-06,Bench Press - Flat - Barbell,35,35.00,Static
+2025-01-06,ISO Lateral Row - Machine,35,35.00,Static
+2025-01-07,1k Intervals - Run,6.5,6.50,Static
+2025-01-13,Pectoral Flys - Cable,26,26.00,Static
+2025-01-13,Shoulder Press - Dumbell,10,10.00,Static
+2025-01-13,ISO Lateral Row - Machine,35,35.00,Static
+2025-01-13,Lateral Pull Down - Machine,Pw 9,9.00,Peak
+2025-01-13,Bench Press - Flat - Barbell,32.5,32.50,Static
+2025-01-22,Bulgarian Split Squat - Dumbell,10,10.00,Static
+2025-01-22,Hack Squat - Machine,60,60.00,Static
+2025-01-22,Good Mornings - Barbell,30,30.00,Static
+2025-01-22,Squat - Back - Barbell,Pw 50,50.00,Peak
+2025-01-22,ISO Lateral Leg Extensions - Machine,10 each,10.00,Static
+2025-01-22,1k Intervals - Run,25,25.00,Static
+2025-01-27,Pectoral Flys - Cable,28.5,28.50,Static
+2025-01-27,Shoulder Press - Dumbell,20,20.00,Static
+2025-01-27,ISO Lateral Row - Machine,40,40.00,Static
+2025-01-27,Lateral Pull Down - Cable,9,9.00,Static
+2025-01-27,Lateral Raise - Standing - Dumbell,6,6.00,Static
+2025-01-27,Front Raises - Dumbell,10,10.00,Static
+2025-01-27,Bench Press - Flat - Barbell,30,30.00,Static
+2025-02-02,5k - Run,33mins,33.00,Static
+2025-02-06,5k - Run,33mins,33.00,Static
+2025-02-07,Lateral Pull Down - Cable,9,9.00,Static
+2025-02-07,ISO Lateral Row - Machine,40,40.00,Static
+2025-02-07,KB Side Bend - Kettlebell,24,24.00,Static
+2025-02-07,Lateral Raise - Standing - Dumbell,8,8.00,Static
+2025-02-07,Shoulder Press - Dumbell,12,12.00,Static
+2025-02-07,Tricep Kick-Backs - Cable,2.5,2.50,Static
+2025-02-07,Tricep Extension Pulldown - Rope - Cable,Pw 12.5,12.50,Peak
+2025-02-09,Hack Squat - Machine,Ww 80,80.00,Working
+2025-02-09,Good Mornings - Barbell,Ww 30,30.00,Working
+2025-02-09,Hyperextensions - Body,10,10.00,Static
+2025-02-09,ISO Lateral Leg Extensions - Machine,15 each,15.00,Static
+2025-02-09,Bulgarian Split Squat - Dumbell,30,30.00,Static
+2025-02-09,Squat - Back - Barbell,Ww 50,50.00,Working
+2025-02-12,Tricep Extension Pulldown - Rope - Cable,12.5,12.50,Static
+2025-02-12,1k Intervals - Run,3 intervals,3.00,Static
+2025-02-12,ISO Lateral Row - Machine,40,40.00,Static
+2025-02-12,Front Raises - Dumbell,7.5,7.50,Static
+2025-02-12,Lateral Raise - Standing - Dumbell,6,6.00,Static
+2025-02-12,Shoulder Press - Dumbell,12,12.00,Static
+2025-02-12,Tricep Kick-Backs - Cable,2.5,2.50,Static
+2025-02-19,Hack Squat - Machine,100 failed,100.00,Static
+2025-02-19,Good Mornings - Barbell,Pw 35,35.00,Peak
+2025-02-19,Squat - Back - Barbell,Pw 55,55.00,Peak
+2025-02-19,ISO Lateral Leg Extensions - Machine,15,15.00,Static
+2025-02-19,Bulgarian Split Squat - Dumbell,Pw 40,40.00,Peak
+2025-02-19,Hyperextensions - Body,10kg,10.00,Static
+2025-02-20,5k - Run,30 mins ,30.00,Static
+2025-03-03,Good Mornings - Barbell,35,35.00,Static
+2025-03-03,Hack Squat - Machine,50,50.00,Static
+2025-03-03,1k Intervals - Run,20mins,20.00,Static
+2025-03-03,Squat - Back - Barbell,60,60.00,Static
+2025-03-03,Bulgarian Split Squat - Dumbell,40 (3 reps each side) ,40.00,Static
+2025-03-03,Leg Press - Machine,60,60.00,Static
+2025-03-03,ISO Lateral Leg Extensions - Machine,30,30.00,Static
+2025-03-16,Squat - Back - Barbell,60,60.00,Static
+2025-03-16,Bulgarian Split Squat - Dumbell,35,35.00,Static
+2025-03-16,ISO Lateral Leg Extensions - Machine,15 each,15.00,Static
+2025-03-16,Good Mornings - Barbell,35,35.00,Static
+2025-03-16,Leg Curls - Cable,10 each,10.00,Static
+2025-03-22,Shoulder Press - Dumbell,10,10.00,Static
+2025-03-22,Front Raises - Dumbell,6,6.00,Static
+2025-03-22,Lateral Raise - Standing - Dumbell,6,6.00,Static
+2025-03-22,ISO-Lateral wide Pull Down - Machine,40,40.00,Static
+2025-03-22,ISO Lateral Row - Machine,40,40.00,Static
+2025-03-24,Leg Curls - Cable,12.5,12.50,Static
+2025-03-24,ISO Lateral Leg Extensions - Machine,15,15.00,Static
+2025-03-24,Good Mornings - Barbell,40,40.00,Static
+2025-03-24,Leg Press - Machine,120,120.00,Static
+2025-03-24,Squat - Back - Barbell,55,55.00,Static
+2025-03-24,Romanian Deadlifts - Barbell,18,18.00,Static
+2025-03-25,Curls - Simple - Dumbell,Bar,0.00,Static
+2025-03-25,Tricep Extension Pulldown - Rope - Cable,7.5,7.50,Static
+2025-03-25,Skull crushers ,7.5,7.50,Static
+2025-03-25,Incline chest press ,10,10.00,Static
+2025-03-25,Bench Press - Flat - Barbell,30,30.00,Static
+2025-03-25,Pectoral Flys - Cable,28.5,28.50,Static
+2025-03-25,Tricep Kick-Backs - Dumbell,5,5.00,Static
+2025-03-28,5k - Run,27mins,27.00,Static
+2025-03-31,Squat - Back - Barbell,50,50.00,Static
+2025-03-31,Leg Press - Machine,100,100.00,Static
+2025-03-31,ISO Lateral Leg Extensions - Machine,20,20.00,Static
+2025-03-31,Good Mornings - Barbell,30,30.00,Static
+2025-03-31,Leg Curls - Cable,25,25.00,Static
+2025-03-31,5k - Run,27mins,27.00,Static
+2025-04-02,Tricep Extension Pulldown - Rope - Cable,11.75,11.75,Static
+2025-04-02,Hip Huggers - Dumbell,10,10.00,Static
+2025-04-02,Lateral Raise - Bent Over - Dumbell,6,6.00,Static
+2025-04-02,Curls - Simple - Dumbell,7.5,7.50,Static
+2025-04-02,Shoulder Press - Dumbell,10,10.00,Static
+2025-04-07,ISO Lateral Leg Extensions - Machine,12.5,12.50,Static
+2025-04-07,Leg Curls - Cable,10,10.00,Static
+2025-04-07,Good Mornings - Barbell,30,30.00,Static
+2025-04-07,Bulgarian Split Squat - Dumbell,30,30.00,Static
+2025-04-07,Leg Press - Machine,120,120.00,Static
+2025-04-07,Squat - Back - Barbell,60,60.00,Static
+2025-04-25,Shoulder Press - Dumbell,10,10.00,Static
+2025-04-25,Lateral Raise - Bent Over - Dumbell,5,5.00,Static
+2025-04-25,Curls - Simple - Dumbell,12,12.00,Static
+2025-04-25,Tricep Extension Pulldown - Rope - Cable,11.75,11.75,Static
+2025-04-25,Hip Huggers - Dumbell,10,10.00,Static
+2025-04-27,Romanian Deadlifts - Barbell,10,10.00,Static
+2025-04-27,ISO Lateral Leg Extensions - Machine,30,30.00,Static
+2025-04-30,Squat - Back - Barbell,50,50.00,Static
+2025-04-30,Good Mornings - Barbell,30,30.00,Static
+2025-04-30,Reverse Deficit Lunges - Barbell,30,30.00,Static
+2025-04-30,Leg Curls - Cable,10,10.00,Static
+2025-04-30,ISO Lateral Leg Extensions - Machine,12.5,12.50,Static
+2025-04-30,Squat - Front - Barbell,30,30.00,Static
+2025-05-06,Hip Huggers - Dumbell,8,8.00,Static
+2025-05-06,Tricep Extension Pulldown - Rope - Cable,12.5,12.50,Static
+2025-05-06,Lateral Raise - Bent Over - Dumbell,6,6.00,Static
+2025-05-06,Shoulder Press - Dumbell,10,10.00,Static
+2025-05-06,Curls - Simple - Dumbell,10,10.00,Static
+2025-05-08,Squat - Back - Barbell,55,55.00,Static
+2025-05-08,Squat - Front - Barbell,30,30.00,Static
+2025-05-08,ISO Lateral Leg Extensions - Machine,10,10.00,Static
+2025-05-08,Good Mornings - Barbell,27.5,27.50,Static
+2025-05-08,ISO Lateral Row - Machine,8,8.00,Static
+2025-05-08,Lateral Pull Down - Cable,9,9.00,Static
+2025-05-08,Crunches - Weighted - Cable,9,9.00,Static
+2025-05-12,1k Intervals - Run,25min,25.00,Static
+2025-05-12,Skull crushers ,10,10.00,Static
+2025-05-12,Curls - Simple - Dumbell,8,8.00,Static
+2025-05-12,Pectoral Flys - Cable,26,26.00,Static
+2025-05-12,Tricep Kick-Backs - Dumbell,2.7,2.70,Static
+2025-05-12,Crunches - Weighted - Cable,10,10.00,Static
+2025-05-12,Bench Press - Flat - Barbell,30,30.00,Static
+2025-05-12,Tricep Extension Pulldown - Rope - Cable,2.5,2.50,Static
+2025-05-14,Leg Curls - Cable,10,10.00,Static
+2025-05-14,ISO Lateral Leg Extensions - Machine,15,15.00,Static
+2025-05-14,Good Mornings - Barbell,30,30.00,Static
+2025-05-14,Squat - Front - Barbell,30,30.00,Static
+2025-05-14,Yoga - Body,25 min,25.00,Static
+2025-05-14,Squat - Back - Barbell,50,50.00,Static
+2025-05-23,Pectoral Flys - Cable,28.5,28.50,Static
+2025-05-23,Bench Press - Flat - Barbell,30,30.00,Static
+2025-05-23,Crunches - Weighted - Cable,10,10.00,Static
+2025-05-23,Curls - Simple - Dumbell,10,10.00,Static
+2025-05-23,Tricep Extension Pulldown - Rope - Cable,10,10.00,Static
+2025-05-23,Skull crushers ,10,10.00,Static
+2025-05-23,Erg,15 mins,15.00,Static
+2025-05-28,Skull crushers ,10,10.00,Static
+2025-05-28,Curls - Simple - Dumbell,8,8.00,Static
+2025-05-28,Tricep Extension Pulldown - Rope - Cable,7.5,7.50,Static
+2025-05-28,Bench Press - Flat - Barbell,30,30.00,Static
+2025-05-28,Crunches - Weighted - Cable,10,10.00,Static
+2025-05-28,Tricep Kick-Backs - Dumbell,5,5.00,Static
+2025-05-28,Pectoral Flys - Cable,26,26.00,Static
+2025-05-31,Leg Curls - Cable,10,10.00,Static
+2025-05-31,Crunches - Weighted - Cable,9,9.00,Static
+2025-05-31,Lateral Pull Down - Cable,9,9.00,Static
+2025-05-31,ISO Lateral Leg Extensions - Machine,10,10.00,Static
+2025-05-31,1k Intervals - Erg,15 mins,15.00,Static
+2025-05-31,Squat - Front - Barbell,30,30.00,Static
+2025-05-31,Squat - Back - Barbell,50,50.00,Static
+2025-05-31,Good Mornings - Barbell,30,30.00,Static
+2025-06-13,Shoulder Press - Dumbell,12,12.00,Static
+2025-06-13,Front Raises - Dumbell,7.5,7.50,Static
+2025-06-13,Lateral Raise - Standing - Dumbell,5,5.00,Static
+2025-06-13,Crunches - Weighted - Cable,20,20.00,Static
+2025-06-13,Lateral Pull Down - Cable,9,9.00,Static
+2025-06-13,ISO Lateral Row - Machine,Pw 30,30.00,Peak
+2025-06-16,Lateral Pull Down - Cable,9,9.00,Static
+2025-06-16,Leg Curls - Cable,10,10.00,Static
+2025-06-16,Good Mornings - Barbell,30,30.00,Static
+2025-06-16,Squat - Back - Barbell,50,50.00,Static
+2025-06-16,Hack Squat - Machine,60,60.00,Static
+2025-06-16,Squat - Front - Barbell,30,30.00,Static
+2025-06-16,ISO Lateral Leg Extensions - Machine,5,5.00,Static
+2025-07-15,Good Mornings - Barbell,25,25.00,Static
+2025-07-15,ISO Lateral Leg Extensions - Machine,5,5.00,Static
+2025-07-15,Hack Squat - Machine,40,40.00,Static
+2025-07-15,Squat - Back - Barbell,40,40.00,Static
+2025-07-15,Squat - Front - Barbell,25,25.00,Static
+2025-07-27,Front Raises - Dumbell,6,6.00,Static
+2025-07-27,ISO Lateral Row - Machine,Pw 30,30.00,Peak
+2025-07-27,Curls - Hammer - Dumbell,8,8.00,Static
+2025-07-27,Shoulder Press - Dumbell,10,10.00,Static
+2025-07-27,Crunches - Weighted - Cable,20,20.00,Static
+2025-07-27,Lateral Raise - Standing - Dumbell,5,5.00,Static
+2025-07-27,Lateral Pull Down - Cable,9,9.00,Static
+2025-07-29,Squat - Back - Barbell,45,45.00,Static
+2025-07-29,Squat - Front - Barbell,30,30.00,Static
+2025-07-29,Reverse Deficit Lunges - Barbell,15,15.00,Static
+2025-07-29,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-08-07,Lateral Pull Down - Cable,7,7.00,Static
+2025-08-07,Shoulder Press - Dumbell,10,10.00,Static
+2025-08-07,Seated Pulley Row - V-Grip - Cable,7,7.00,Static
+2025-08-07,Lateral Raise - Standing - Dumbell,8,8.00,Static
+2025-08-07,Straight Arm Pushdown - Cable,10,10.00,Static
+2025-08-10,Hip Thrusts - B-Stance - Dumbell,20,20.00,Static
+2025-08-10,ISO Lateral Leg Extensions - Machine,15,15.00,Static
+2025-08-10,Squat - Front - Barbell,32.5,32.50,Static
+2025-08-10,Squat - Back - Barbell,40,40.00,Static
+2025-08-10,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-08-12,Pectoral Flys - Cable,26,26.00,Static
+2025-08-12,Bench Press - Flat - Barbell,27.5,27.50,Static
+2025-08-12,Tricep Kick-Backs - Dumbell,2.7,2.70,Static
+2025-08-12,Tricep Extension Pulldown - Rope - Cable,2.5,2.50,Static
+2025-08-12,Curls - Simple - Dumbell,8,8.00,Static
+2025-08-21,Straight Arm Pushdown - Cable,12.5,12.50,Static
+2025-08-21,Lateral Raise - Standing - Dumbell,8,8.00,Static
+2025-08-21,Seated Pulley Row - V-Grip - Cable,8,8.00,Static
+2025-08-21,Lateral Pull Down - Cable,8,8.00,Static
+2025-08-21,Shoulder Press - Dumbell,10,10.00,Static
+2025-08-22,Squat - Back - Barbell,40,40.00,Static
+2025-08-22,Squat - Front - Barbell,30,30.00,Static
+2025-08-22,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-08-22,ISO Lateral Leg Extensions - Machine,10,10.00,Static
+2025-08-22,Hip Thrusts - B-Stance - Dumbell,20,20.00,Static
+2025-08-27,Tricep Kick-Backs - Dumbell,4,4.00,Static
+2025-08-27,Curls - Simple - Dumbell,8,8.00,Static
+2025-08-27,Tricep Extension Pulldown - Rope - Cable,7.5,7.50,Static
+2025-08-27,Pectoral Flys - Cable,26,26.00,Static
+2025-08-27,Bench Press - Flat - Barbell,30,30.00,Static
+2025-08-30,Lateral Pull Down - Cable,9,9.00,Static
+2025-08-30,Shoulder Press - Dumbell,12,12.00,Static
+2025-08-30,Seated Pulley Row - V-Grip - Cable,9,9.00,Static
+2025-08-30,Lateral Raise - Standing - Dumbell,8,8.00,Static
+2025-08-30,Straight Arm Pushdown - Cable,12.5,12.50,Static
+2025-08-31,Squat - Front - Barbell,10,10.00,Static
+2025-08-31,Leg Curls - Cable,10,10.00,Static
+2025-08-31,ISO Lateral Leg Extensions - Machine,10,10.00,Static
+2025-08-31,Good Mornings - Barbell,32.5,32.50,Static
+2025-08-31,Squat - Back - Barbell,50,50.00,Static
+2025-08-31,Bulgarian Split Squat - Dumbell,7.5,7.50,Static
+2025-09-04,Squat - Back - Barbell,50,50.00,Static
+2025-09-04,Good Mornings - Barbell,32.5,32.50,Static
+2025-09-04,Bulgarian Split Squat - Dumbell,7.5,7.50,Static
+2025-09-04,ISO Lateral Leg Extensions - Machine,10,10.00,Static
+2025-09-04,Leg Curls - Cable,10,10.00,Static
+2025-09-04,Squat - Front - Barbell,10,10.00,Static
+2025-09-11,Curls - Simple - Dumbell,8,8.00,Static
+2025-09-11,Tricep Extension Pulldown - Rope - Cable,11,11.00,Static
+2025-09-11,Bench Press - Flat - Barbell,30,30.00,Static
+2025-09-11,Pectoral Flys - Cable,26,26.00,Static
+2025-09-11,Tricep Kick-Backs - Dumbell,4,4.00,Static
+2025-09-16,Lateral Pull Down - Cable,9,9.00,Static
+2025-09-16,Shoulder Press - Dumbell,10,10.00,Static
+2025-09-16,Seated Pulley Row - V-Grip - Cable,9,9.00,Static
+2025-09-16,Lateral Raise - Standing - Dumbell,7.5,7.50,Static
+2025-09-16,Straight Arm Pushdown - Cable,15,15.00,Static
+2025-09-20,Bulgarian Split Squat - Dumbell,10,10.00,Static
+2025-09-20,Good Mornings - Barbell,27.5,27.50,Static
+2025-09-20,ISO Lateral Leg Extensions - Machine,10,10.00,Static
+2025-09-20,Squat - Front - Barbell,25,25.00,Static
+2025-09-20,Squat - Back - Barbell,40,40.00,Static
+2025-09-20,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-09-22,Pectoral Flys - Cable,26,26.00,Static
+2025-09-22,Bench Press - Flat - Barbell,30,30.00,Static
+2025-09-22,Tricep Kick-Backs - Dumbell,4,4.00,Static
+2025-09-22,Tricep Extension Pulldown - Rope - Cable,12,12.00,Static
+2025-09-22,Curls - Simple - Dumbell,10,10.00,Static
+2025-10-04,Bulgarian Split Squat - Dumbell,12.5,12.50,Static
+2025-10-04,ISO Lateral Leg Extensions - Machine,10,10.00,Static
+2025-10-04,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-10-04,Good Mornings - Barbell,30,30.00,Static
+2025-10-12,Shoulder Press - Dumbell,12,12.00,Static
+2025-10-12,Seated Pulley Row - V-Grip - Cable,9,9.00,Static
+2025-10-12,Lateral Raise - Standing - Dumbell,7.5,7.50,Static
+2025-10-12,Straight Arm Pushdown - Cable,15,15.00,Static
+2025-10-12,Lateral Pull Down - Cable,11,11.00,Static
+2025-10-13,Good Mornings - Barbell,30,30.00,Static
+2025-10-13,Bulgarian Split Squat - Dumbell,12.5,12.50,Static
+2025-10-13,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-10-13,ISO Lateral Leg Extensions - Machine,12.5,12.50,Static
+2025-10-19,Bulgarian Split Squat - Dumbell,30,30.00,Static
+2025-10-19,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-10-26,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-10-26,ISO Lateral Leg Extensions - Machine,30,30.00,Static
+2025-10-26,Bulgarian Split Squat - Dumbell,30,30.00,Static
+2025-10-26,Hack Squat - Machine,20,20.00,Static
+2025-10-26,Leg Curls - Cable,6.25,6.25,Static
+2025-10-28,Lateral Raise - Standing - Dumbell,7.5,7.50,Static
+2025-10-28,Straight Arm Pushdown - Cable,10,10.00,Static
+2025-10-28,Seated Pulley Row - V-Grip - Cable,9,9.00,Static
+2025-10-28,Lateral Pull Down - Cable,9,9.00,Static
+2025-10-28,Shoulder Press - Dumbell,12,12.00,Static
+2025-10-29,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-10-29,ISO Lateral Leg Extensions - Machine,20,20.00,Static
+2025-10-29,Bulgarian Split Squat - Dumbell,20,20.00,Static
+2025-10-29,Hack Squat - Machine,20,20.00,Static
+2025-10-31,1k Intervals - Run,3.5,3.50,Static
+2025-10-31,Curls - Simple - Dumbell,10,10.00,Static
+2025-10-31,Tricep Extension Pulldown - Rope - Cable,12.5,12.50,Static
+2025-10-31,Bench Press - Flat - Barbell,30,30.00,Static
+2025-10-31,Pectoral Flys - Cable,26,26.00,Static
+2025-10-31,Tricep Kick-Backs - Dumbell,6,6.00,Static
+2025-11-03,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-11-03,ISO Lateral Leg Extensions - Machine,20,20.00,Static
+2025-11-03,Bulgarian Split Squat - Dumbell,20,20.00,Static
+2025-11-03,Hack Squat - Machine,20,20.00,Static
+2025-11-06,1k Intervals - Run,3.5,3.50,Static
+2025-11-06,Tricep Extension Pulldown - Rope - Cable,12.5,12.50,Static
+2025-11-06,Curls - Simple - Dumbell,10,10.00,Static
+2025-11-06,Bench Press - Flat - Barbell,30,30.00,Static
+2025-11-06,Pectoral Flys - Cable,26,26.00,Static
+2025-11-06,Tricep Kick-Backs - Dumbell,6,6.00,Static
+2025-11-12,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-11-12,ISO Lateral Leg Extensions - Machine,30,30.00,Static
+2025-11-12,Bulgarian Split Squat - Dumbell,30,30.00,Static
+2025-11-12,Hack Squat - Machine,20,20.00,Static
+2025-11-12,Leg Curls - Cable,6.25,6.25,Static
+2025-11-17,Leg Curls - Cable,6.25,6.25,Static
+2025-11-17,Hack Squat - Machine,20,20.00,Static
+2025-11-17,ISO Lateral Leg Extensions - Machine,30,30.00,Static
+2025-11-17,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-11-17,Bulgarian Split Squat - Dumbell,30,30.00,Static
+2025-11-20,Lateral Pull Down - Cable,8,8.00,Static
+2025-11-20,Shoulder Press - Dumbell,8,8.00,Static
+2025-11-20,Lateral Raise - Standing - Dumbell,5,5.00,Static
+2025-11-23,Hack Squat - Machine,10,10.00,Static
+2025-11-23,Bulgarian Split Squat - Dumbell,20,20.00,Static
+2025-11-23,Leg Curls - Cable,7.5,7.50,Static
+2025-11-23,ISO Lateral Leg Extensions - Machine,30,30.00,Static
+2025-11-23,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-11-23,Lunges - Dumbell,30,30.00,Static
+2025-12-15,ISO Lateral Leg Extensions - Machine,15,15.00,Static
+2025-12-15,Romanian Deadlifts - Barbell,40,40.00,Static
+2025-12-15,Hack Squat - Machine,15,15.00,Static
+2025-12-15,Leg Curls - Cable,10,10.00,Static
+2025-12-30,1k Intervals - Erg,2,2.00,Static
+2025-12-30,Lateral Raise - Standing - Dumbell,6,6.00,Static
+2025-12-30,Straight Arm Pushdown - Cable,10,10.00,Static
+2025-12-30,Shoulder Press - Dumbell,10,10.00,Static
+2025-12-30,Lateral Pull Down - Cable,8,8.00,Static
+2025-12-30,Seated Pulley Row - V-Grip - Cable,8,8.00,Static
+2026-01-06,Romanian Deadlifts - Barbell,40,40.00,Static
+2026-01-06,ISO Lateral Leg Extensions - Machine,15,15.00,Static
+2026-01-06,Lunges - Dumbell,12.5,12.50,Static
+2026-01-06,Bulgarian Split Squat - Dumbell,0,0.00,Static
+2026-01-06,Hack Squat - Machine,15,15.00,Static
+2026-01-14,ISO Lateral Leg Extensions - Machine,15,15.00,Static
+2026-01-14,Romanian Deadlifts - Barbell,40,40.00,Static
+2026-01-14,Hack Squat - Machine,15,15.00,Static
+2026-01-14,Leg Curls - Cable,10,10.00,Static

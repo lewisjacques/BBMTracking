@@ -5,7 +5,6 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 from base.models import Session, SessionEntry, Exercise, MuscleGroup, ExerciseType
 from base.utils.legacy_data_handling import combine_exercises
-from base.utils.user_context import user_schema_context
 from django.contrib.auth.models import User
 from datetime import datetime
 import pandas as pd
@@ -48,62 +47,60 @@ class Command(BaseCommand):
         # Combine and normalize the data
         combined_data = combine_exercises(session_data, exercise_data, save_dir=None)
         
-        # Set user schema context and import within that context
-        with user_schema_context(user):
-            # Use transaction to rollback everything if there's an error
-            with transaction.atomic():
-                sessions_created = 0
-                entries_created = 0
+        # Use transaction to rollback everything if there's an error
+        with transaction.atomic():
+            sessions_created = 0
+            entries_created = 0
+            
+            # Iterate through combined data
+            for _, row in combined_data.iterrows():
+                exercise_name = row['Exercise']
+                muscle_group_name = row['MuscleGroup'] if pd.notna(row['MuscleGroup']) else ''
+                exercise_type_name = row['exercise_type'] if pd.notna(row['exercise_type']) else ''
                 
-                # Iterate through combined data
-                for _, row in combined_data.iterrows():
-                    exercise_name = row['Exercise']
-                    muscle_group_name = row['MuscleGroup'] if pd.notna(row['MuscleGroup']) else ''
-                    exercise_type_name = row['exercise_type'] if pd.notna(row['exercise_type']) else ''
-                    
-                    # Get or create the MuscleGroup object
-                    muscle_group_obj, _ = MuscleGroup.objects.get_or_create(
-                        muscle_group_name=muscle_group_name
-                    )
-                    
-                    # Get or create the ExerciseType object
-                    exercise_type_obj = None
-                    if exercise_type_name:
-                        exercise_type_obj, _ = ExerciseType.objects.get_or_create(
-                            type_name=exercise_type_name
-                        )
-                    
-                    # Get or create exercise
-                    exercise_obj, _ = Exercise.objects.get_or_create(
-                        exercise_name=exercise_name,
-                        defaults={
-                            'exercise_name_legacy': exercise_name,
-                            'muscle_group': muscle_group_obj,
-                            'exercise_type': exercise_type_obj
-                        }
-                    )
-
-                    # Get or create session for this date and user
-                    # Multiple entries can belong to the same date/session
-                    session, created = Session.objects.get_or_create(
-                        date=datetime.strptime(row['Date'], '%Y-%m-%d').date(),
-                        user=user,
-                        defaults={'notes': '', 'completed': True}
-                    )
-                    if created:
-                        sessions_created += 1
-                    
-                    # Create session entry
-                    SessionEntry.objects.create(
-                        session=session,
-                        exercise=exercise_obj,
-                        weight=str(row['Weight']),
-                        status=row['Status']
-                    )
-                    entries_created += 1
-                
-                self.stdout.write(
-                    self.style.SUCCESS(
-                        f'Successfully imported {sessions_created} sessions and {entries_created} entries for {user.email}'
-                    )
+                # Get or create the MuscleGroup object
+                muscle_group_obj, _ = MuscleGroup.objects.get_or_create(
+                    muscle_group_name=muscle_group_name
                 )
+                
+                # Get or create the ExerciseType object
+                exercise_type_obj = None
+                if exercise_type_name:
+                    exercise_type_obj, _ = ExerciseType.objects.get_or_create(
+                        type_name=exercise_type_name
+                    )
+                
+                # Get or create exercise
+                exercise_obj, _ = Exercise.objects.get_or_create(
+                    exercise_name=exercise_name,
+                    defaults={
+                        'exercise_name_legacy': exercise_name,
+                        'muscle_group': muscle_group_obj,
+                        'exercise_type': exercise_type_obj
+                    }
+                )
+
+                # Get or create session for this date and user
+                # Multiple entries can belong to the same date/session
+                session, created = Session.objects.get_or_create(
+                    date=datetime.strptime(row['Date'], '%Y-%m-%d').date(),
+                    user=user,
+                    defaults={'notes': '', 'completed': True}
+                )
+                if created:
+                    sessions_created += 1
+                
+                # Create session entry
+                SessionEntry.objects.create(
+                    session=session,
+                    exercise=exercise_obj,
+                    weight=str(row['Weight']),
+                    status=row['Status']
+                )
+                entries_created += 1
+            
+            self.stdout.write(
+                self.style.SUCCESS(
+                    f'Successfully imported {sessions_created} sessions and {entries_created} entries for {user.email}'
+                )
+            )

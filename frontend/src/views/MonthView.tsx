@@ -4,13 +4,13 @@ import {
   startOfMonth,
   endOfMonth,
   eachDayOfInterval,
-  isToday,
-  getWeek,
+  isToday
 } from 'date-fns'
 import { fetchSessions, Session } from '../api/client'
 
 interface MonthViewProps {
   startDate: Date
+  onDayClick?: (date: Date) => void
 }
 
 interface DayStats {
@@ -21,7 +21,7 @@ interface DayStats {
   muscleGroups: Set<string>
 }
 
-export function MonthView({ startDate }: MonthViewProps) {
+export function MonthView({ startDate, onDayClick }: MonthViewProps) {
   const [stats, setStats] = useState<DayStats[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -234,6 +234,7 @@ export function MonthView({ startDate }: MonthViewProps) {
                 return (
                   <div
                     key={format(day.date, 'yyyy-MM-dd')}
+                    onClick={() => onDayClick?.(day.date)}
                     style={{
                       borderRadius: '0.5rem',
                       padding: '0.75rem',

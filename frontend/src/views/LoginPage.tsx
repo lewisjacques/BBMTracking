@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { login, register, getCurrentUser, User } from '../api/client'
-import { Dumbbell, Mail, Lock, User as UserIcon } from 'lucide-react'
+import { Dumbbell, Mail, Lock} from 'lucide-react'
 
 interface LoginPageProps {
   onLoginSuccess: (user: User) => void

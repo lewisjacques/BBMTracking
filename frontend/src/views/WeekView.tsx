@@ -10,6 +10,7 @@ import { fetchSessions, Session } from '../api/client'
 
 interface WeekViewProps {
   startDate: Date
+  onDayClick?: (date: Date) => void
 }
 
 interface DayStats {
@@ -20,7 +21,7 @@ interface DayStats {
   muscleGroups: Set<string>
 }
 
-export function WeekView({ startDate }: WeekViewProps) {
+export function WeekView({ startDate, onDayClick }: WeekViewProps) {
   const [stats, setStats] = useState<DayStats[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -181,6 +182,7 @@ export function WeekView({ startDate }: WeekViewProps) {
             return (
               <div
                 key={format(day.date, 'yyyy-MM-dd')}
+                onClick={() => onDayClick?.(day.date)}
                 style={{
                   borderRadius: '0.5rem',
                   padding: '1rem',

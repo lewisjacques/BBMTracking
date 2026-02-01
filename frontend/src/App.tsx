@@ -46,6 +46,16 @@ export default function App() {
     }
   }
 
+  const handleToday = () => {
+    setDate(new Date())
+    setView('day')
+  }
+
+  const handleDayClick = (clickedDate: Date) => {
+    setDate(clickedDate)
+    setView('day')
+  }
+
   const handleLogout = () => {
     localStorage.removeItem('access_token')
     localStorage.removeItem('refresh_token')
@@ -267,11 +277,38 @@ export default function App() {
                 <ChevronLeft style={{ width: '16px', height: '16px' }} />
                 Prev
               </button>
-              <div style={{ textAlign: 'center', minWidth: '300px' }}>
-                <p style={{ fontSize: '0.875rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Current Period</p>
-                <h2 style={{ fontSize: '1.125rem', fontWeight: '600', color: 'white' }}>
-                  {dateLabel}
-                </h2>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ textAlign: 'center', minWidth: '300px' }}>
+                  <p style={{ fontSize: '0.875rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Current Period</p>
+                  <h2 style={{ fontSize: '1.125rem', fontWeight: '600', color: 'white' }}>
+                    {dateLabel}
+                  </h2>
+                </div>
+                <button
+                  onClick={handleToday}
+                  style={{
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: '0.5rem',
+                    background: 'linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(6, 182, 212) 100%)',
+                    color: 'white',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontSize: '0.95rem',
+                    fontWeight: '600',
+                    transition: 'all 0.2s',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                    e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)'
+                  }}
+                >
+                  Today
+                </button>
               </div>
               <button
                 onClick={handleNext}
@@ -307,8 +344,8 @@ export default function App() {
       {/* Main Content */}
       <main style={{ maxWidth: '80rem', margin: '0 auto', width: '100%', padding: '3rem 1.5rem', flex: 1 }}>
         {view === 'day' && <DayView date={date} />}
-        {view === 'week' && <WeekView startDate={weekStart} />}
-        {view === 'month' && <MonthView startDate={monthStart} />}
+        {view === 'week' && <WeekView startDate={weekStart} onDayClick={handleDayClick} />}
+        {view === 'month' && <MonthView startDate={monthStart} onDayClick={handleDayClick} />}
       </main>
     </div>
   )
